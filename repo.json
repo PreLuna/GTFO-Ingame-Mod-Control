@@ -1,0 +1,118 @@
+{
+  "SchemaVersion": 3,
+  "Repository": "GTFO-Ingame-Mod-Control",
+  "Status": "PrototypeC5-AdaptedMarkers",
+  "Modules": [
+    {
+      "Id": "ModControl",
+      "Assembly": "PreLuna.ModControl",
+      "Guid": "PreLuna.ModControl",
+      "Version": "0.3.3",
+      "DependencyGuids": [
+        "dev.AuriRex.gtfo.TheArchive",
+        "PreLuna.EnemyHealthBar",
+        "PreLuna.ThirdPersonHUD",
+        "PreLuna.ThirdPerson",
+        "PreLuna.HeadCamera",
+        "PreLuna.MicroMaster",
+        "PreLuna.Captain",
+        "PreLuna.FoamGunCustom",
+        "PreLuna.EnemyHealthBar.DamageNumbers"
+      ],
+      "CompileDependencies": [],
+      "Kind": "managed",
+      "ExternalReferences": [
+        {
+          "Name": "TheArchive.Core.dll",
+          "SHA256": "F20AC33BA246E0037A6B1DFCE34BEE7BF0A42A2B0E5691FB2800776609ABEF81"
+        },
+        {
+          "Name": "PreLuna.EnemyHealthBar.dll",
+          "SHA256": "78205D2508C3E1682DFDAD7C7DD9093E589120A06918D55F074E3E1242E38717"
+        }
+      ],
+      "ModuleRoot": "ModControl",
+      "SourceRoot": "ModControl/src",
+      "TestsRoot": "ModControl/tests",
+      "Name": "游戏内统一管理",
+      "DependencyDetails": [
+        {
+          "Guid": "dev.AuriRex.gtfo.TheArchive",
+          "DependencyFlags": 1,
+          "Kind": "Hard",
+          "DeclaredVersion": "0.0.838"
+        },
+        {
+          "Guid": "PreLuna.EnemyHealthBar",
+          "DependencyFlags": 2,
+          "Kind": "Soft",
+          "DeclaredVersion": ""
+        },
+        {
+          "Guid": "PreLuna.ThirdPersonHUD",
+          "DependencyFlags": 2,
+          "Kind": "Soft",
+          "DeclaredVersion": ""
+        },
+        {
+          "Guid": "PreLuna.ThirdPerson",
+          "DependencyFlags": 2,
+          "Kind": "Soft",
+          "DeclaredVersion": ""
+        },
+        {
+          "Guid": "PreLuna.HeadCamera",
+          "DependencyFlags": 2,
+          "Kind": "Soft",
+          "DeclaredVersion": ""
+        },
+        {
+          "Guid": "PreLuna.MicroMaster",
+          "DependencyFlags": 2,
+          "Kind": "Soft",
+          "DeclaredVersion": ""
+        },
+        {
+          "Guid": "PreLuna.Captain",
+          "DependencyFlags": 2,
+          "Kind": "Soft",
+          "DeclaredVersion": ""
+        },
+        {
+          "Guid": "PreLuna.FoamGunCustom",
+          "DependencyFlags": 2,
+          "Kind": "Soft",
+          "DeclaredVersion": ""
+        },
+        {
+          "Guid": "PreLuna.EnemyHealthBar.DamageNumbers",
+          "DependencyFlags": 2,
+          "Kind": "Soft",
+          "DeclaredVersion": ""
+        }
+      ]
+    },
+    {
+      "Id": "ModControl.Resources",
+      "Kind": "data",
+      "Version": "0.2.9",
+      "ModuleRoot": "ModControl",
+      "DataRoot": "ModControl/Resources",
+      "InstallPath": "BepInEx/plugins/PreLuna.ModControl",
+      "Name": "统一管理资源",
+      "CompileDependencies": [],
+      "DependencyDetails": []
+    }
+  ],
+  "InputRoots": [
+    "ModControl",
+    "IntegrationTests",
+    "docs"
+  ],
+  "TestPlanPath": "IntegrationTests/recipes.json",
+  "DesignDocument": "docs/DESIGN.md",
+  "ImplementationPlan": "docs/IMPLEMENTATION_PLAN.md"
+}
+
+
+

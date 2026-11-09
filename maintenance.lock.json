@@ -1,0 +1,531 @@
+{
+  "SchemaVersion": 2,
+  "Repository": "GTFO-Ingame-Mod-Control",
+  "Files": [
+    {
+      "Path": ".gitattributes",
+      "SHA256": "D60F352D0DB1404C70AFB4BB8B2CA3FD1C610572AA40720E8A0B7BAA7885418C",
+      "Bytes": 19
+    },
+    {
+      "Path": ".gitignore",
+      "SHA256": "34E4AF88CA5A3490A280CA9758DB8BC7DA7E477F9D43D0606FB4B271015BC6B5",
+      "Bytes": 195
+    },
+    {
+      "Path": "Build.ps1",
+      "SHA256": "220F126D008D0A22283713B8B9565646255D41CCE8C42378A4B806529F7E2BAC",
+      "Bytes": 2879
+    },
+    {
+      "Path": "docs/DESIGN.md",
+      "SHA256": "36D80C8E2B8B5D374F10074071E3C6F6A3D7B3DB786339C77A357196F7E9C864",
+      "Bytes": 23134
+    },
+    {
+      "Path": "docs/IMPLEMENTATION_PLAN.md",
+      "SHA256": "7FB475DB29BF795A1AF6B41B4FA56AA8D18F8B101920B49F567F49AA0CB57066",
+      "Bytes": 16350
+    },
+    {
+      "Path": "docs/TARGET_INTEGRATION.md",
+      "SHA256": "4B600890C157065BF1CCD34FFC689F16292B3642DDDDF907A93A4B14D35791F5",
+      "Bytes": 3368
+    },
+    {
+      "Path": "IntegrationTests/recipes.json",
+      "SHA256": "BDFA480FB3F5641D778E8E1F224742094087761DE5EA0974BAB8A744510A9484",
+      "Bytes": 11033
+    },
+    {
+      "Path": "ModControl/说明.md",
+      "SHA256": "AC3AC5731B3A086BB2CD49126E101C4EE13F513A562D79ABA0062E1151EF8EAC",
+      "Bytes": 2301
+    },
+    {
+      "Path": "ModControl/Resources/Definitions/Module_PreLuna.ModControl_Group_Definition.json",
+      "SHA256": "A9CED206D4064EB4FA23CB4B965AEAE7CC17D15DB52EB1E2F971D5BC002BD1AF",
+      "Bytes": 791
+    },
+    {
+      "Path": "ModControl/src/Adapters/CaptainChineseAdapter.cs",
+      "SHA256": "9B005926C021B8F0B0FA64552E23686E5E4B3F88A42FADB9787B022046DC8BC9",
+      "Bytes": 12578
+    },
+    {
+      "Path": "ModControl/src/Adapters/DamageNumbersAdapter.cs",
+      "SHA256": "13C3432BA53C15AB6706975D90CFB741A174C9C9B20F4E716107859751348D08",
+      "Bytes": 12605
+    },
+    {
+      "Path": "ModControl/src/Adapters/EnemyHealthBarAdapter.cs",
+      "SHA256": "E5FBA1F78936F7EC1CBA7BEE1EA956499D22E4E7A752E8956CB122FDCC3D88C2",
+      "Bytes": 7604
+    },
+    {
+      "Path": "ModControl/src/Adapters/EnemyHealthBarAdapterFactory.cs",
+      "SHA256": "98B2F8DCC9EBAD782FED345F3DF360FE42D698FF42938143D5ED7994C9950923",
+      "Bytes": 926
+    },
+    {
+      "Path": "ModControl/src/Adapters/FoamGunAdapter.cs",
+      "SHA256": "157B1C72DF8DF96CDA4DEE2C800388CC878CBC2F5687D3DA92D2681C4D0BE8C9",
+      "Bytes": 12507
+    },
+    {
+      "Path": "ModControl/src/Adapters/HeadCameraAdapter.cs",
+      "SHA256": "66746AD0327C8485F3BA336A5679DA7CD590B07986ED28D4ADD2655DCAFA04D5",
+      "Bytes": 12552
+    },
+    {
+      "Path": "ModControl/src/Adapters/MicroMasterAdapter.cs",
+      "SHA256": "2C9A132DDCFFCDFA666122F9CD205BCE1376410B4F7B219905C1896CEBFFF54A",
+      "Bytes": 12543
+    },
+    {
+      "Path": "ModControl/src/Adapters/PrisonerMovementReadOnlyAdapter.cs",
+      "SHA256": "289DEC983E1D0B666A641E54382C81AE234B583E28D54865C6BA5BBCA5C8DAEE",
+      "Bytes": 4454
+    },
+    {
+      "Path": "ModControl/src/Adapters/ReadOnlyCfgModels.cs",
+      "SHA256": "ACCD8113D92ABA1B48FF6656BC3FBC29B51CE32B53028EE9FE74395BBCF02430",
+      "Bytes": 2317
+    },
+    {
+      "Path": "ModControl/src/Adapters/ReadOnlyCfgReader.cs",
+      "SHA256": "33C3AA4BD3549C9D70DF240D2D71115E821C5E5B50235C70301C58FEB5F5AD85",
+      "Bytes": 4369
+    },
+    {
+      "Path": "ModControl/src/Adapters/ReadOnlyCfgTargets.cs",
+      "SHA256": "AEE0FB10301E852B8CC9CD479F44E54561E09F2FF564B3D7FE7BAA72AAF875DF",
+      "Bytes": 6474
+    },
+    {
+      "Path": "ModControl/src/Adapters/ThirdPersonCameraAdapter.cs",
+      "SHA256": "FFE9AC01CEE8B798D22CC2CA4C626138BA14180E7593D9F8609CA4062D48BA05",
+      "Bytes": 12609
+    },
+    {
+      "Path": "ModControl/src/Adapters/ThirdPersonHudAdapter.cs",
+      "SHA256": "17FBF0F310465E4273788D46CAD0B573841E37D62BA18201D2718A48A6D0D783",
+      "Bytes": 12571
+    },
+    {
+      "Path": "ModControl/src/Core/InstalledPlugin.cs",
+      "SHA256": "57A5996CB681B021D460FCACB20FC46A651A5F3276595BA88C03EA8DDC133130",
+      "Bytes": 530
+    },
+    {
+      "Path": "ModControl/src/Core/ModControlInfo.cs",
+      "SHA256": "ED8FC52B4BDE404CE0FA8B4F6052A0710D8F0283B94877BFBE5AAF079E513D1B",
+      "Bytes": 1499
+    },
+    {
+      "Path": "ModControl/src/Core/ModControlStatus.cs",
+      "SHA256": "1D0848B7D5B0A1EEB0118B4DF6CE400D01D97B9A50F74FC92A677271AEBEF39B",
+      "Bytes": 3300
+    },
+    {
+      "Path": "ModControl/src/Core/Operations/ChangeSet.cs",
+      "SHA256": "E9BAF76BF9D8F429DDCEF79F46765697E9B80251AEE1F078C2BE7254BCB677C8",
+      "Bytes": 669
+    },
+    {
+      "Path": "ModControl/src/Core/Operations/OperationCoordinator.cs",
+      "SHA256": "BBE3A4CDBE674A2768A6F862246896733E4108751A3DD52928EE616AE01DF2EB",
+      "Bytes": 5292
+    },
+    {
+      "Path": "ModControl/src/Core/Operations/OperationModels.cs",
+      "SHA256": "2D6EBF8BFF92D0DC66F90ED08C77FC5EDB11E834434F6A1A9BFA59A7AE131272",
+      "Bytes": 1035
+    },
+    {
+      "Path": "ModControl/src/Core/Operations/ProviderContracts.cs",
+      "SHA256": "CC97B0C03D0CA6D81A738886457D8C88812926ABF734F8A7729FB2644328563D",
+      "Bytes": 1767
+    },
+    {
+      "Path": "ModControl/src/Core/Operations/SettingDefinition.cs",
+      "SHA256": "1E8A8195D57066F2B55D40CE6CF3BD462D41E5EC2311BF0EAB656996D5D189C8",
+      "Bytes": 2069
+    },
+    {
+      "Path": "ModControl/src/Core/Operations/SettingKind.cs",
+      "SHA256": "1436EBC3307E4C97AE1246B8EC6602B295F5149ADD9E1F7079C5AC9150A42BE7",
+      "Bytes": 138
+    },
+    {
+      "Path": "ModControl/src/Core/Operations/SettingValue.cs",
+      "SHA256": "7F52CD9E755B6786C35C8A8D5AFC017C824E2187913360C94B53926F7F010232",
+      "Bytes": 1896
+    },
+    {
+      "Path": "ModControl/src/Core/Operations/TargetCapabilities.cs",
+      "SHA256": "AC4D75D5F8C4533508E690315A050B42C8C98B54AB0D25AF3BFFD2019B99E479",
+      "Bytes": 353
+    },
+    {
+      "Path": "ModControl/src/Core/Operations/TargetDescriptor.cs",
+      "SHA256": "94E662C268675D2B8D6F8ECB936592DB1B136597FBA2DC94D62D63BA7F7298B0",
+      "Bytes": 1694
+    },
+    {
+      "Path": "ModControl/src/Core/Operations/TargetSnapshot.cs",
+      "SHA256": "DB0BFF43528166E8B511AD59602174E9A49E3CE0D2EB22C28C27FC3D4154CB6D",
+      "Bytes": 1398
+    },
+    {
+      "Path": "ModControl/src/Core/Operations/Validation.cs",
+      "SHA256": "AB109E09991CD66A94596D1CA5FD296F4C346B3C8E8E334A7C48D59CE14258E7",
+      "Bytes": 1263
+    },
+    {
+      "Path": "ModControl/src/Core/SliderValueFormatter.cs",
+      "SHA256": "26C2778BC8C5CE1EC05ABBCE6BD31421A27138E687B34F64FBAB6299943D4171",
+      "Bytes": 1225
+    },
+    {
+      "Path": "ModControl/src/Core/Storage/ConfigFileRevisionStore.cs",
+      "SHA256": "40D4E7D9508BCCD985F3479E6E6F4331459B4F288D133CDE735F00019A4DF672",
+      "Bytes": 5294
+    },
+    {
+      "Path": "ModControl/src/Core/TargetCatalog.cs",
+      "SHA256": "DCF72E1823A941210F495749D95EBF392670330DBC5B2B87996B41CD746CA4B8",
+      "Bytes": 1346
+    },
+    {
+      "Path": "ModControl/src/Features/CaptainBotRestartConfig.cs",
+      "SHA256": "90C9B495E6205928DD65E1BB52F8F125B8F6810F2891AD816E250530F173D06A",
+      "Bytes": 2548
+    },
+    {
+      "Path": "ModControl/src/Features/CaptainChineseConfig.cs",
+      "SHA256": "594C08D4F6A2793F641B2C664774DFD3C822FBE15A53E62E707792B7BDB8BE3D",
+      "Bytes": 1551
+    },
+    {
+      "Path": "ModControl/src/Features/DamageNumbersConfig.cs",
+      "SHA256": "A6C452E4FED510503157EAC984494ACA5E445C834754DB12A8CF0E4D011AD7B5",
+      "Bytes": 2943
+    },
+    {
+      "Path": "ModControl/src/Features/DiagnosticsPage.cs",
+      "SHA256": "4BDD04DA02C145B0E62D3F20726908CFC83BDA36E84413BE354B2C4FD893C68A",
+      "Bytes": 3724
+    },
+    {
+      "Path": "ModControl/src/Features/EnemyHealthBarConfig.cs",
+      "SHA256": "AE356376A8EED69D06952A552857804AE631630F2BD684F91CAC4123CD5B2438",
+      "Bytes": 3535
+    },
+    {
+      "Path": "ModControl/src/Features/FoamGunConfig.cs",
+      "SHA256": "CFC39FF4DE72E28DFAB465DC3DDC56C207FECF74F2E34ED8384C830962A4968B",
+      "Bytes": 2706
+    },
+    {
+      "Path": "ModControl/src/Features/HeadCameraConfig.cs",
+      "SHA256": "ADD389523E4DB541C19787D57A179FC1DB22D7BEBFB56602AF782F5FEEA2F6BC",
+      "Bytes": 3104
+    },
+    {
+      "Path": "ModControl/src/Features/InstalledModsPage.cs",
+      "SHA256": "2E33F91272ACB02BB313B86B637A1C9D4D3B225FD09713B579FD61C02F9A195B",
+      "Bytes": 29150
+    },
+    {
+      "Path": "ModControl/src/Features/MicroMasterConfig.cs",
+      "SHA256": "0DE144159012E66DEF9C6B7476A122A19C2C0FCB97766F73F0EAF7ECB786130F",
+      "Bytes": 2987
+    },
+    {
+      "Path": "ModControl/src/Features/ModControlPageSupport.cs",
+      "SHA256": "C5C53C884C839D8B588EF996782B9E85034CE600E423DCBDA3775B6D405676BC",
+      "Bytes": 4846
+    },
+    {
+      "Path": "ModControl/src/Features/OverviewPage.cs",
+      "SHA256": "F397595927EB2767C3DFADA5ED1653B220CBE0C26518A97C850375F0A0884671",
+      "Bytes": 3243
+    },
+    {
+      "Path": "ModControl/src/Features/PrisonerMovementPanel.cs",
+      "SHA256": "EB725F95BB2839E6A77DC55CA364AB0BD330CA9401DEB0587330CA623AB2528B",
+      "Bytes": 2846
+    },
+    {
+      "Path": "ModControl/src/Features/PrisonerMovementReadOnlyConfig.cs",
+      "SHA256": "DA633061B5EBB5BFDD65868D26121C583F34F5DEA8B0AA3E6DCCD0877BA140E5",
+      "Bytes": 703
+    },
+    {
+      "Path": "ModControl/src/Features/ReadOnly/BioScannerReadOnlyConfig.cs",
+      "SHA256": "8B57401FA07F1132D9F55A8095FE89CF5F829554A2D1C00B3A131C13F6B0B35D",
+      "Bytes": 1442
+    },
+    {
+      "Path": "ModControl/src/Features/ReadOnly/CaptainReadOnlyConfig.cs",
+      "SHA256": "1F87D0EB90836CB7015392F7419261B4CD5E910730BF1C58E5DC968DCD199A7B",
+      "Bytes": 2121
+    },
+    {
+      "Path": "ModControl/src/Features/ReadOnly/CoopBotsReadOnlyConfig.cs",
+      "SHA256": "564857C2FE117B2538D6994AE4ADC9F0D5161DDE7F0365A4FB30E86AEC790344",
+      "Bytes": 2357
+    },
+    {
+      "Path": "ModControl/src/Features/ReadOnly/FlashlightReadOnlyConfig.cs",
+      "SHA256": "8C2BCDB0E59C337E7136174868E96C4D4B89610BAE8F6A8AE6D028119A744575",
+      "Bytes": 2359
+    },
+    {
+      "Path": "ModControl/src/Features/ReadOnly/PrisonerHealthReadOnlyConfig.cs",
+      "SHA256": "8EACD0A136D171A6993B2CFFFB8C0AE035A9DD78DAAEFC3AEDE3FF8FEB3E6E00",
+      "Bytes": 1880
+    },
+    {
+      "Path": "ModControl/src/Features/ReadOnly/ReadOnlyCfgLine.cs",
+      "SHA256": "E13254472A699E0950EAFEF6D1F249C082706A34F160389AC4C13CD5D4D02B2C",
+      "Bytes": 302
+    },
+    {
+      "Path": "ModControl/src/Features/RestartCfgConfigs.cs",
+      "SHA256": "312C58958DE87B589C482AF126C758995F66BE06874D85D18425742D9851A412",
+      "Bytes": 11677
+    },
+    {
+      "Path": "ModControl/src/Features/RestartCfgTargets.cs",
+      "SHA256": "D9221CFDFAF4CEEA372240441EB880ABEBCBAECCFB8FBD62552F67AB8E4F68E7",
+      "Bytes": 7584
+    },
+    {
+      "Path": "ModControl/src/Features/SliderActualValueDisplay.cs",
+      "SHA256": "6EE318A04AAC3BCDD7101DE86B17DBCC3F690A1D4E849F01665D1B3F8020873C",
+      "Bytes": 5172
+    },
+    {
+      "Path": "ModControl/src/Features/TargetPages/ITargetPage.cs",
+      "SHA256": "A879FFC0C84654207E5AFB689CE6CE7F3796CF3B057C1EC04B784E42D03C9012",
+      "Bytes": 1471
+    },
+    {
+      "Path": "ModControl/src/Features/TargetPages/ModControlText.cs",
+      "SHA256": "A4CA31B9E718FA887841417B2068EEB8CC034EC155A0F438F76F574295BC03C0",
+      "Bytes": 3338
+    },
+    {
+      "Path": "ModControl/src/Features/TargetPages/ReadOnlyCfgPage.cs",
+      "SHA256": "4D85AE720A84EDB697037080086D38CD894C117EA20B259C24FDFDBC027BA78F",
+      "Bytes": 2508
+    },
+    {
+      "Path": "ModControl/src/Features/TargetPages/RestartCfgPage.cs",
+      "SHA256": "C49DCD50C8AFD98439E8F192499ABDC505EA7F07B7800D0B23EFE915B3A83879",
+      "Bytes": 9291
+    },
+    {
+      "Path": "ModControl/src/Features/TargetPages/TargetPageBinding.cs",
+      "SHA256": "8040B05B6954108CED861F8EFCD8A515DA207F0F6946AD26687E8A2A90887D10",
+      "Bytes": 1729
+    },
+    {
+      "Path": "ModControl/src/Features/TargetPages/TargetValueReader.cs",
+      "SHA256": "0852F88B756CD06D5106B699B37709A5AF9B1C852ADC9E388C80FCA1656DC00F",
+      "Bytes": 1756
+    },
+    {
+      "Path": "ModControl/src/Features/TargetPages/WritableTargetPage.cs",
+      "SHA256": "3F4966386C8D2196D044A291439F958DEA638D69804452A503BDE1B363C17815",
+      "Bytes": 5279
+    },
+    {
+      "Path": "ModControl/src/Features/ThirdPersonConfig.cs",
+      "SHA256": "8D16D96B00CCEA8A1328D959C6591BDABF2FE9A9CB9F8FE585FEF14687894299",
+      "Bytes": 2880
+    },
+    {
+      "Path": "ModControl/src/Features/ThirdPersonHudConfig.cs",
+      "SHA256": "05679334CFCEFC4EDF619274E43F3B87BE5A008178086916EB0DBE5AC2C561C2",
+      "Bytes": 2029
+    },
+    {
+      "Path": "ModControl/src/Plugin.cs",
+      "SHA256": "B4CBF995D85A83581B98902C430BC781366CFF34157AF92E13C75ACC1BB71460",
+      "Bytes": 2001
+    },
+    {
+      "Path": "ModControl/src/Runtime/ModControlEnvironment.cs",
+      "SHA256": "15B65AB3F72A24A4E7A8ED23D673434D3A8B87FF2E16974D7D6D3ED5D453D23A",
+      "Bytes": 1102
+    },
+    {
+      "Path": "ModControl/src/Runtime/ModControlModule.cs",
+      "SHA256": "9FF7BEC5328CADB3429DDD32DE9ABEA936CCE782E8BDFE49378CE74892E8B981",
+      "Bytes": 951
+    },
+    {
+      "Path": "ModControl/src/Runtime/ModControlPerformance.cs",
+      "SHA256": "6E744C2A39FF6DFE22E810E56CC2DD2857DF3ABFC08C446E10B49725E7AF0381",
+      "Bytes": 1069
+    },
+    {
+      "Path": "ModControl/src/Runtime/ModControlRuntime.cs",
+      "SHA256": "2E2AD3323847C6D8B1FF9F134AB4F0B07EB9E24AA5B8AF697A77D54FD857D1C9",
+      "Bytes": 3386
+    },
+    {
+      "Path": "ModControl/src/Runtime/PluginCatalog.cs",
+      "SHA256": "BFADCA592EFCE919FE64AFB318B41FDD0CDD4D548D0FBC6E065E59E7B81C7EDB",
+      "Bytes": 1139
+    },
+    {
+      "Path": "ModControl/tests/Adapters/CaptainChineseAdapterTests.cs",
+      "SHA256": "98A63B3A2E8BB0D430BCB7F90575B5F4655B5F1813DD3E9DAA84DD717C36F347",
+      "Bytes": 2236
+    },
+    {
+      "Path": "ModControl/tests/Adapters/DamageNumbersAdapterTests.cs",
+      "SHA256": "93FB7CC9CAAC2A50EF36F41F21BE7DCB168FA0770271765E3F1F5E4B801189DC",
+      "Bytes": 2212
+    },
+    {
+      "Path": "ModControl/tests/Adapters/FakeBepInExPaths.cs",
+      "SHA256": "DED3156DE9A47586FFE3A87B69D5838E742587596F557F63249AE3AC4E2F198A",
+      "Bytes": 191
+    },
+    {
+      "Path": "ModControl/tests/Adapters/FakeCaptainControlApi.cs",
+      "SHA256": "8A10B58A23423AF4EB266306C6C594DD6B3022726541C8E4E05A9E3D7FD0E511",
+      "Bytes": 1227
+    },
+    {
+      "Path": "ModControl/tests/Adapters/FakeDamageNumbersControlApi.cs",
+      "SHA256": "FCDCBA690BF712B2D2B73254C912F008A04746C7FA0A7CC502F8BA441144BD3D",
+      "Bytes": 2198
+    },
+    {
+      "Path": "ModControl/tests/Adapters/FakeFoamGunControlApi.cs",
+      "SHA256": "DB54A161A0E17022B2FC94BBF3C6E16373C96DA1169F66D28E842698AD1F7B59",
+      "Bytes": 1967
+    },
+    {
+      "Path": "ModControl/tests/Adapters/FakeHeadCameraControlApi.cs",
+      "SHA256": "DBBB67BB2DACF1F50EE2ADEFAC3203BE09246659F764EEB3C1F4B932F3247950",
+      "Bytes": 2177
+    },
+    {
+      "Path": "ModControl/tests/Adapters/FakeMicroMasterControlApi.cs",
+      "SHA256": "D5331580E57141E9E690C7232122BFA20BF2394D4FFA854D46F17EEB20D37DEA",
+      "Bytes": 2236
+    },
+    {
+      "Path": "ModControl/tests/Adapters/FakeThirdPersonControlApi.cs",
+      "SHA256": "0E921CC89A0A71FDABA8F8AAE998ADB9A4279B2863C2981CB9B495C1E0C7B30A",
+      "Bytes": 2221
+    },
+    {
+      "Path": "ModControl/tests/Adapters/FakeThirdPersonHudControlApi.cs",
+      "SHA256": "BC3CFE9939D5160D443C178D0975E138350CC2AE08A84E49A0D9EF68C358B359",
+      "Bytes": 2535
+    },
+    {
+      "Path": "ModControl/tests/Adapters/FoamGunAdapterTests.cs",
+      "SHA256": "BF414FBDDF2A340948DD617198103A328784573E15756362BF027261BE3766AD",
+      "Bytes": 2199
+    },
+    {
+      "Path": "ModControl/tests/Adapters/HeadCameraAdapterTests.cs",
+      "SHA256": "4D47F47C482798264E1CE8930C2B54E3EF9540F61C9CF6ED3343E73FCCD98F24",
+      "Bytes": 2197
+    },
+    {
+      "Path": "ModControl/tests/Adapters/MicroMasterAdapterTests.cs",
+      "SHA256": "C00CEDCED011AEFF7B71A650D8E8688BF2FD5CFC71AF4E92071FDCF0B0DD5BBC",
+      "Bytes": 2218
+    },
+    {
+      "Path": "ModControl/tests/Adapters/PrisonerMovementReadOnlyAdapterTests.cs",
+      "SHA256": "5AC54456062EAD51B97E8F22E7A2A3F577F5FB922A3A38B43A85B25E8E9989B2",
+      "Bytes": 3270
+    },
+    {
+      "Path": "ModControl/tests/Adapters/ReadOnlyCfgReaderTests.cs",
+      "SHA256": "68EC84DA9B9B185DD32193645EA21CF72A9856FAF2ACB46414243990190A95E2",
+      "Bytes": 5180
+    },
+    {
+      "Path": "ModControl/tests/Adapters/ThirdPersonCameraAdapterTests.cs",
+      "SHA256": "AA60AFD63F600E77ADB1A2749188E80AD7A640F2A96AA9C5A3B2FE49CB2DBA35",
+      "Bytes": 2818
+    },
+    {
+      "Path": "ModControl/tests/Adapters/ThirdPersonHudAdapterTests.cs",
+      "SHA256": "765A1FA75658913D756C33F872AFABE560B29F48ADE763ABCE0475436C6C7E10",
+      "Bytes": 2821
+    },
+    {
+      "Path": "ModControl/tests/Operations/FakeTargetProvider.cs",
+      "SHA256": "465E41BF6821214B71693ADEB43CAB9BB589882494016F3F41218807725DD8FE",
+      "Bytes": 3794
+    },
+    {
+      "Path": "ModControl/tests/Operations/OperationCoordinatorTests.cs",
+      "SHA256": "3BFDFF77AD318FBFEE39335CADC1473D4395821908A740700A4CD4D43FF63E00",
+      "Bytes": 9642
+    },
+    {
+      "Path": "ModControl/tests/Operations/ValidationTests.cs",
+      "SHA256": "78F6A65B434D69B35A02A8FC6BA459C9AA66C70587D974B4C893690CDC425F8B",
+      "Bytes": 2826
+    },
+    {
+      "Path": "ModControl/tests/ResourcesJsonTests.cs",
+      "SHA256": "054BB86012C6B6B35BE253A8C21177D65F747C029D3DCD39699702D1A1BE7497",
+      "Bytes": 1986
+    },
+    {
+      "Path": "ModControl/tests/SliderValueFormatterTests.cs",
+      "SHA256": "7DA7542DFB9F17C5FCFC3A27CF9844254245A238658FAC3D61C71B111E075671",
+      "Bytes": 2186
+    },
+    {
+      "Path": "ModControl/tests/StatusModelTests.cs",
+      "SHA256": "1941415FFA3C9C700609BCBB61A84E5B2864A4D8D4AA3F90259D60B63281A6AD",
+      "Bytes": 2924
+    },
+    {
+      "Path": "ModControl/tests/Storage/ConfigFileRevisionStoreTests.cs",
+      "SHA256": "CF6C90FEFB4F04B4CAA21BBD699453F49F1BB96481F33F0153F147A5817BB522",
+      "Bytes": 4239
+    },
+    {
+      "Path": "ModControl/tests/TargetCatalogTests.cs",
+      "SHA256": "D5E06F06254EF2530AABC8885849B3A15B6BF91B5F20E10299973CF2F37B7994",
+      "Bytes": 3604
+    },
+    {
+      "Path": "ModControl/tests/TargetPageTextTests.cs",
+      "SHA256": "3EB21F0DC751B92A06B1C103E2C466924CE67D4F4DE626D4FF1BF2265EA37894",
+      "Bytes": 3076
+    },
+    {
+      "Path": "README.md",
+      "SHA256": "77173C62F68CD7C7FFD9C092237074E4BAFD2A3A385529C73882B2C603CDFA80",
+      "Bytes": 21014
+    },
+    {
+      "Path": "repo.json",
+      "SHA256": "85BE1B9B3844EBE1327BFC68004D5C2240102B6060EAE1B1AC83355EF1C447D9",
+      "Bytes": 3156
+    },
+    {
+      "Path": "Test.ps1",
+      "SHA256": "D042E487A47187B9B2F047780FED40686871AB90C575F9AE5C384B1CB092FBA7",
+      "Bytes": 313
+    }
+  ]
+}

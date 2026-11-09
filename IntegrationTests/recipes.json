@@ -1,0 +1,286 @@
+[
+  {
+    "Name": "TargetCatalogTests",
+    "Sources": [
+      "ModControl/src/Core/InstalledPlugin.cs",
+      "ModControl/src/Core/ModControlInfo.cs",
+      "ModControl/src/Core/TargetCatalog.cs",
+      "ModControl/tests/TargetCatalogTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/TargetCatalogTests.json"
+    ]
+  },
+  {
+    "Name": "StatusModelTests",
+    "Sources": [
+      "ModControl/src/Core/InstalledPlugin.cs",
+      "ModControl/src/Core/ModControlInfo.cs",
+      "ModControl/src/Core/ModControlStatus.cs",
+      "ModControl/tests/StatusModelTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/StatusModelTests.json"
+    ]
+  },
+  {
+    "Name": "SliderValueFormatterTests",
+    "Sources": [
+      "ModControl/src/Core/SliderValueFormatter.cs",
+      "ModControl/tests/SliderValueFormatterTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/SliderValueFormatterTests.json"
+    ]
+  },
+  {
+    "Name": "ResourcesJsonTests",
+    "Sources": [
+      "ModControl/tests/ResourcesJsonTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/ResourcesJsonTests.json",
+      "ModControl/Resources/Definitions/Module_PreLuna.ModControl_Group_Definition.json"
+    ]
+  },
+  {
+    "Name": "ValidationTests",
+    "Sources": [
+      "ModControl/src/Core/Operations/SettingKind.cs",
+      "ModControl/src/Core/Operations/SettingValue.cs",
+      "ModControl/src/Core/Operations/Validation.cs",
+      "ModControl/src/Core/Operations/SettingDefinition.cs",
+      "ModControl/tests/Operations/ValidationTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/ValidationTests.json"
+    ]
+  },
+  {
+    "Name": "OperationCoordinatorTests",
+    "Sources": [
+      "ModControl/src/Core/Operations/SettingKind.cs",
+      "ModControl/src/Core/Operations/SettingValue.cs",
+      "ModControl/src/Core/Operations/Validation.cs",
+      "ModControl/src/Core/Operations/SettingDefinition.cs",
+      "ModControl/src/Core/Operations/TargetCapabilities.cs",
+      "ModControl/src/Core/Operations/TargetDescriptor.cs",
+      "ModControl/src/Core/Operations/TargetSnapshot.cs",
+      "ModControl/src/Core/Operations/ChangeSet.cs",
+      "ModControl/src/Core/Operations/OperationModels.cs",
+      "ModControl/src/Core/Operations/ProviderContracts.cs",
+      "ModControl/src/Core/Operations/OperationCoordinator.cs",
+      "ModControl/tests/Operations/FakeTargetProvider.cs",
+      "ModControl/tests/Operations/OperationCoordinatorTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/OperationCoordinatorTests.json"
+    ]
+  },
+  {
+    "Name": "ConfigFileRevisionStoreTests",
+    "Sources": [
+      "ModControl/src/Core/Storage/ConfigFileRevisionStore.cs",
+      "ModControl/tests/Storage/ConfigFileRevisionStoreTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/ConfigFileRevisionStoreTests.json"
+    ]
+  },
+  {
+    "Name": "ThirdPersonHudAdapterTests",
+    "Sources": [
+      "ModControl/src/Core/Operations/SettingKind.cs",
+      "ModControl/src/Core/Operations/SettingValue.cs",
+      "ModControl/src/Core/Operations/Validation.cs",
+      "ModControl/src/Core/Operations/SettingDefinition.cs",
+      "ModControl/src/Core/Operations/TargetCapabilities.cs",
+      "ModControl/src/Core/Operations/TargetDescriptor.cs",
+      "ModControl/src/Core/Operations/TargetSnapshot.cs",
+      "ModControl/src/Core/Operations/ChangeSet.cs",
+      "ModControl/src/Core/Operations/ProviderContracts.cs",
+      "ModControl/src/Adapters/ThirdPersonHudAdapter.cs",
+      "ModControl/tests/Adapters/FakeThirdPersonHudControlApi.cs",
+      "ModControl/tests/Adapters/ThirdPersonHudAdapterTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/ThirdPersonHudAdapterTests.json"
+    ]
+  },
+  {
+    "Name": "PrisonerMovementReadOnlyAdapterTests",
+    "Sources": [
+      "ModControl/src/Core/Operations/SettingKind.cs",
+      "ModControl/src/Core/Operations/SettingValue.cs",
+      "ModControl/src/Core/Operations/Validation.cs",
+      "ModControl/src/Core/Operations/SettingDefinition.cs",
+      "ModControl/src/Core/Operations/TargetCapabilities.cs",
+      "ModControl/src/Core/Operations/TargetDescriptor.cs",
+      "ModControl/src/Core/Operations/TargetSnapshot.cs",
+      "ModControl/src/Core/Operations/ChangeSet.cs",
+      "ModControl/src/Core/Operations/ProviderContracts.cs",
+      "ModControl/src/Core/Storage/ConfigFileRevisionStore.cs",
+      "ModControl/src/Adapters/PrisonerMovementReadOnlyAdapter.cs",
+      "ModControl/tests/Adapters/FakeBepInExPaths.cs",
+      "ModControl/tests/Adapters/PrisonerMovementReadOnlyAdapterTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/PrisonerMovementReadOnlyAdapterTests.json"
+    ]
+  },
+  {
+    "Name": "TargetPageTextTests",
+    "Sources": [
+      "ModControl/src/Core/Operations/SettingKind.cs",
+      "ModControl/src/Core/Operations/SettingValue.cs",
+      "ModControl/src/Core/Operations/Validation.cs",
+      "ModControl/src/Core/Operations/TargetCapabilities.cs",
+      "ModControl/src/Core/Operations/OperationModels.cs",
+      "ModControl/src/Features/TargetPages/ModControlText.cs",
+      "ModControl/tests/TargetPageTextTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/TargetPageTextTests.json"
+    ]
+  },
+  {
+    "Name": "ReadOnlyCfgReaderTests",
+    "Sources": [
+      "ModControl/src/Core/Operations/SettingKind.cs",
+      "ModControl/src/Core/Operations/SettingValue.cs",
+      "ModControl/src/Core/Operations/Validation.cs",
+      "ModControl/src/Core/Operations/SettingDefinition.cs",
+      "ModControl/src/Core/Operations/TargetCapabilities.cs",
+      "ModControl/src/Core/Operations/TargetDescriptor.cs",
+      "ModControl/src/Core/Storage/ConfigFileRevisionStore.cs",
+      "ModControl/src/Adapters/ReadOnlyCfgModels.cs",
+      "ModControl/src/Adapters/ReadOnlyCfgReader.cs",
+      "ModControl/src/Adapters/ReadOnlyCfgTargets.cs",
+      "ModControl/tests/Adapters/FakeBepInExPaths.cs",
+      "ModControl/tests/Adapters/ReadOnlyCfgReaderTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/ReadOnlyCfgReaderTests.json"
+    ]
+  },
+  {
+    "Name": "ThirdPersonCameraAdapterTests",
+    "Sources": [
+      "ModControl/src/Core/Operations/SettingKind.cs",
+      "ModControl/src/Core/Operations/SettingValue.cs",
+      "ModControl/src/Core/Operations/Validation.cs",
+      "ModControl/src/Core/Operations/SettingDefinition.cs",
+      "ModControl/src/Core/Operations/TargetCapabilities.cs",
+      "ModControl/src/Core/Operations/TargetDescriptor.cs",
+      "ModControl/src/Core/Operations/TargetSnapshot.cs",
+      "ModControl/src/Core/Operations/ChangeSet.cs",
+      "ModControl/src/Core/Operations/ProviderContracts.cs",
+      "ModControl/src/Adapters/ThirdPersonCameraAdapter.cs",
+      "ModControl/tests/Adapters/FakeThirdPersonControlApi.cs",
+      "ModControl/tests/Adapters/ThirdPersonCameraAdapterTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/ThirdPersonCameraAdapterTests.json"
+    ]
+  },
+  {
+    "Name": "HeadCameraAdapterTests",
+    "Sources": [
+      "ModControl/src/Core/Operations/SettingKind.cs",
+      "ModControl/src/Core/Operations/SettingValue.cs",
+      "ModControl/src/Core/Operations/Validation.cs",
+      "ModControl/src/Core/Operations/SettingDefinition.cs",
+      "ModControl/src/Core/Operations/TargetCapabilities.cs",
+      "ModControl/src/Core/Operations/TargetDescriptor.cs",
+      "ModControl/src/Core/Operations/TargetSnapshot.cs",
+      "ModControl/src/Core/Operations/ChangeSet.cs",
+      "ModControl/src/Core/Operations/ProviderContracts.cs",
+      "ModControl/src/Adapters/HeadCameraAdapter.cs",
+      "ModControl/tests/Adapters/FakeHeadCameraControlApi.cs",
+      "ModControl/tests/Adapters/HeadCameraAdapterTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/HeadCameraAdapterTests.json"
+    ]
+  },
+  {
+    "Name": "MicroMasterAdapterTests",
+    "Sources": [
+      "ModControl/src/Core/Operations/SettingKind.cs",
+      "ModControl/src/Core/Operations/SettingValue.cs",
+      "ModControl/src/Core/Operations/Validation.cs",
+      "ModControl/src/Core/Operations/SettingDefinition.cs",
+      "ModControl/src/Core/Operations/TargetCapabilities.cs",
+      "ModControl/src/Core/Operations/TargetDescriptor.cs",
+      "ModControl/src/Core/Operations/TargetSnapshot.cs",
+      "ModControl/src/Core/Operations/ChangeSet.cs",
+      "ModControl/src/Core/Operations/ProviderContracts.cs",
+      "ModControl/src/Adapters/MicroMasterAdapter.cs",
+      "ModControl/tests/Adapters/FakeMicroMasterControlApi.cs",
+      "ModControl/tests/Adapters/MicroMasterAdapterTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/MicroMasterAdapterTests.json"
+    ]
+  },
+  {
+    "Name": "CaptainChineseAdapterTests",
+    "Sources": [
+      "ModControl/src/Core/Operations/SettingKind.cs",
+      "ModControl/src/Core/Operations/SettingValue.cs",
+      "ModControl/src/Core/Operations/Validation.cs",
+      "ModControl/src/Core/Operations/SettingDefinition.cs",
+      "ModControl/src/Core/Operations/TargetCapabilities.cs",
+      "ModControl/src/Core/Operations/TargetDescriptor.cs",
+      "ModControl/src/Core/Operations/TargetSnapshot.cs",
+      "ModControl/src/Core/Operations/ChangeSet.cs",
+      "ModControl/src/Core/Operations/ProviderContracts.cs",
+      "ModControl/src/Adapters/CaptainChineseAdapter.cs",
+      "ModControl/tests/Adapters/FakeCaptainControlApi.cs",
+      "ModControl/tests/Adapters/CaptainChineseAdapterTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/CaptainChineseAdapterTests.json"
+    ]
+  },
+  {
+    "Name": "FoamGunAdapterTests",
+    "Sources": [
+      "ModControl/src/Core/Operations/SettingKind.cs",
+      "ModControl/src/Core/Operations/SettingValue.cs",
+      "ModControl/src/Core/Operations/Validation.cs",
+      "ModControl/src/Core/Operations/SettingDefinition.cs",
+      "ModControl/src/Core/Operations/TargetCapabilities.cs",
+      "ModControl/src/Core/Operations/TargetDescriptor.cs",
+      "ModControl/src/Core/Operations/TargetSnapshot.cs",
+      "ModControl/src/Core/Operations/ChangeSet.cs",
+      "ModControl/src/Core/Operations/ProviderContracts.cs",
+      "ModControl/src/Adapters/FoamGunAdapter.cs",
+      "ModControl/tests/Adapters/FakeFoamGunControlApi.cs",
+      "ModControl/tests/Adapters/FoamGunAdapterTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/FoamGunAdapterTests.json"
+    ]
+  },
+  {
+    "Name": "DamageNumbersAdapterTests",
+    "Sources": [
+      "ModControl/src/Core/Operations/SettingKind.cs",
+      "ModControl/src/Core/Operations/SettingValue.cs",
+      "ModControl/src/Core/Operations/Validation.cs",
+      "ModControl/src/Core/Operations/SettingDefinition.cs",
+      "ModControl/src/Core/Operations/TargetCapabilities.cs",
+      "ModControl/src/Core/Operations/TargetDescriptor.cs",
+      "ModControl/src/Core/Operations/TargetSnapshot.cs",
+      "ModControl/src/Core/Operations/ChangeSet.cs",
+      "ModControl/src/Core/Operations/ProviderContracts.cs",
+      "ModControl/src/Adapters/DamageNumbersAdapter.cs",
+      "ModControl/tests/Adapters/FakeDamageNumbersControlApi.cs",
+      "ModControl/tests/Adapters/DamageNumbersAdapterTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/DamageNumbersAdapterTests.json"
+    ]
+  }
+]

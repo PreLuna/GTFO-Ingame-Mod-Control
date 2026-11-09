@@ -1,0 +1,21 @@
+# Rebuildable outputs and local machine state
+/out/
+/.local/
+/dist/
+/artifacts/
+**/bin/
+**/obj/
+.vs/
+.vscode/
+.idea/
+*.dll
+*.pdb
+*.log
+*.zip
+*.7z
+*.tmp
+*.cfg
+.env
+.env.*
+*.user
+config.local.json
