@@ -2,7 +2,7 @@
 
 PreLuna 游戏内统一 MOD 管理入口。通过 TheArchive 的扩展接口呈现页面，调用已接入 MOD 的配置能力，保留各 MOD 的独立安装与运行方式。
 
-**当前阶段：2026-11-17 0.3.4 已接入 BFV 反馈目标与 String 值类型；BFV 0.2.0 的“BFV 反馈”单列页提供 26 项即时配置（四个颜色用 TheArchive 原生 `SColor` 拾色器）。** 0.3.3 的 17 个目标、ThirdPerson/HeadCamera/MicroMaster 可写页、七个冻结只读页、C6 基础均保留；新增 BFV 适配器 2 项测试，ModControl 现 18 组 66 项离线测试通过。BFV 控制 API 启动探针显示 `settings=26`，ModControl 0.3.4 已安装并启动；**页面已可见，首次发现 26 项摘要重叠，已通过 `ITargetValueSummary` 隐藏全量摘要；颜色拾色/写入/重启读回待用户复测**。已删除 Draft、ApplyTemporary、SaveAsDefault、RestoreSaved、CommitDeferred、Deferred/Restart 策略及对应旧测试；C2 草稿模型只保留为历史设计记录。已知：恢复默认已删除；滑块归一化显示已改为实际值；共享文件保护已以通用修订守卫和目标端行级存储落地，Captain 多模块共享配置尚未接入。没有提交、远端或 Release。
+**当前阶段：2026-11-17 0.3.4 已接入 BFV 反馈目标与 String 值类型；BFV 0.2.0 的“BFV 反馈”单列页提供 26 项即时配置（四个颜色用 TheArchive 原生 `SColor` 拾色器）。** 0.3.3 的 17 个目标、ThirdPerson/HeadCamera/MicroMaster 可写页、七个冻结只读页、C6 基础均保留；新增 BFV 适配器 2 项测试，ModControl 现 18 组 66 项离线测试通过。BFV 控制 API 启动探针显示 `settings=26`，ModControl 0.3.4 已安装并启动；**用户已确认页面显示、26 项摘要压缩、颜色 Apply 即时变色、重启后读回通过；面板页与拾色器已验收**。已删除 Draft、ApplyTemporary、SaveAsDefault、RestoreSaved、CommitDeferred、Deferred/Restart 策略及对应旧测试；C2 草稿模型只保留为历史设计记录。已知：恢复默认已删除；滑块归一化显示已改为实际值；共享文件保护已以通用修订守卫和目标端行级存储落地，Captain 多模块共享配置尚未接入。已提交/推送远端 main；未发布 Release。
 
 [定位入口](#modules) · [页面与操作](#usage) · [依赖与兼容](#relations) · [开发与验收](#development) · [来源说明](#sources)
 
@@ -17,9 +17,9 @@ PreLuna 游戏内统一 MOD 管理入口。通过 TheArchive 的扩展接口呈�
 | 离线测试 | [ModControl/tests](ModControl/tests) | 18 组 66 项纯逻辑/资源/存储/适配器测试；不加载游戏、不写目标配置 |
 | 模块分组定义 | [Definitions](ModControl/Resources/Definitions/Module_PreLuna.ModControl_Group_Definition.json) | 随 DLL 安装的 TheArchive 原生数据文件 |
 | 页面组织、状态模型、配置归属与操作协议 | [设计细节](docs/DESIGN.md) | 设计基线 v1；C1～C4 已落地，C5 目标扩展完成并经用户验收，C6 滑块显示子项已落地 |
-| 原型、施工阶段、验收矩阵与回退 | [施工计划](docs/IMPLEMENTATION_PLAN.md) | C1～C4 完成；C5 目标扩展已验收；阶段 A 0.2.1、阶段 B 0.2.2 已验收；0.3.4 新增 BFV 反馈页（26 项）、String 目标值与 `SColor` 拾色器，18组66项离线通过，已安装待面板实机确认 |
+| 原型、施工阶段、验收矩阵与回退 | [施工计划](docs/IMPLEMENTATION_PLAN.md) | C1～C4 完成；C5 目标扩展已验收；阶段 A 0.2.1、阶段 B 0.2.2 已验收；0.3.4 新增 BFV 反馈页（26 项）、String 目标值与 `SColor` 拾色器，18组66项离线通过并获用户验收 |
 
-模块名 `ModControl`，程序集与插件 GUID `PreLuna.ModControl`，版本 `0.3.4`。构建输出为 `PreLuna.ModControl.dll` 与 `Definitions/Module_PreLuna.ModControl_Group_Definition.json`；游戏目标目录沿用 `BepInEx/plugins/本地定制/PreLuna.ModControl/`。尚无远端、提交或 Release；`out` 仅为可重建临时输出。0.3.4 将 `PreLuna.EnemyHealthBar.dll` 外部引用固定到本机已交付父 0.4.0 的 SHA256 `E946D90747E37A712B6CD8134CA48DA0901FA6D6952E1C257E06296BEC99C30C`（旧 `78205D…` 在本机依赖目录不存在，会阻断构建）。
+模块名 `ModControl`，程序集与插件 GUID `PreLuna.ModControl`，版本 `0.3.4`。构建输出为 `PreLuna.ModControl.dll` 与 `Definitions/Module_PreLuna.ModControl_Group_Definition.json`；游戏目标目录沿用 `BepInEx/plugins/本地定制/PreLuna.ModControl/`。已提交/推送远端 main；未发布 Release；`out` 仅为可重建临时输出。0.3.4 将 `PreLuna.EnemyHealthBar.dll` 外部引用固定到本机已交付父 0.4.0 的 SHA256 `E946D90747E37A712B6CD8134CA48DA0901FA6D6952E1C257E06296BEC99C30C`（旧 `78205D…` 在本机依赖目录不存在，会阻断构建）。
 
 <a id="usage"></a>
 ## 页面与操作
@@ -114,7 +114,7 @@ C5 按用户选择先接两个目标；Captain 中文显示后续通过 Captain 
 - 目标侧写入期间关闭 `Config.SaveOnConfigSet`，安全行级替换后恢复；热键内部保存会被状态吸收，外部改动返回冲突。
 - 冻结模块 Flashlight/PrisonerMovement/PrisonerHealth/BioScanner/CoopBots 增加“CFG 写入 + 重启生效”页；只写本地 CFG，不即时、不新增 API。
 - 只读参考页仍保留 Captain 默认策略/旧只读页。
-- 下方插件清单给已配置插件加 `[已适配]`，避免与上方配置入口混淆。版本 0.3.4，已安装；面板页面已可见，摘要重叠已修，颜色/写入/重启待复测。
+- 下方插件清单给已配置插件加 `[已适配]`，避免与上方配置入口混淆。版本 0.3.4，已安装；面板页面、摘要压缩、颜色 Apply/重启读回已由用户验收。
 
 ### C6 滑块实际值显示（子项）
 
