@@ -7,7 +7,7 @@
       "Id": "ModControl",
       "Assembly": "PreLuna.ModControl",
       "Guid": "PreLuna.ModControl",
-      "Version": "0.3.3",
+      "Version": "0.3.4",
       "DependencyGuids": [
         "dev.AuriRex.gtfo.TheArchive",
         "PreLuna.EnemyHealthBar",
@@ -17,7 +17,8 @@
         "PreLuna.MicroMaster",
         "PreLuna.Captain",
         "PreLuna.FoamGunCustom",
-        "PreLuna.EnemyHealthBar.DamageNumbers"
+        "PreLuna.EnemyHealthBar.DamageNumbers",
+        "PreLuna.EnemyHealthBar.BFVFeedback"
       ],
       "CompileDependencies": [],
       "Kind": "managed",
@@ -28,7 +29,7 @@
         },
         {
           "Name": "PreLuna.EnemyHealthBar.dll",
-          "SHA256": "78205D2508C3E1682DFDAD7C7DD9093E589120A06918D55F074E3E1242E38717"
+          "SHA256": "E946D90747E37A712B6CD8134CA48DA0901FA6D6952E1C257E06296BEC99C30C"
         }
       ],
       "ModuleRoot": "ModControl",
@@ -86,6 +87,12 @@
         },
         {
           "Guid": "PreLuna.EnemyHealthBar.DamageNumbers",
+          "DependencyFlags": 2,
+          "Kind": "Soft",
+          "DeclaredVersion": ""
+        },
+        {
+          "Guid": "PreLuna.EnemyHealthBar.BFVFeedback",
           "DependencyFlags": 2,
           "Kind": "Soft",
           "DeclaredVersion": ""

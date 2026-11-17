@@ -41,6 +41,13 @@ namespace PreLuna.ModControl.Core.Operations
                 return CheckRange(integer);
             }
 
+            if (Kind == SettingKind.String)
+            {
+                if (!value.TryGetString(out var text) || string.IsNullOrWhiteSpace(text))
+                    return new ValidationIssue(Key, "不是合法文本");
+                return null;
+            }
+
             if (!value.TryGetNumber(out var number) || double.IsNaN(number) || double.IsInfinity(number))
                 return new ValidationIssue(Key, "不是合法数值");
             return CheckRange(number);

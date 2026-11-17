@@ -17,6 +17,7 @@ namespace PreLuna.ModControl
     [BepInDependency(ModControlInfo.CaptainGuid, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(ModControlInfo.FoamGunGuid, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency(ModControlInfo.DamageNumbersGuid, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(ModControlInfo.BfvFeedbackGuid, BepInDependency.DependencyFlags.SoftDependency)]
     public sealed class Plugin : BasePlugin
     {
         public override void Load()

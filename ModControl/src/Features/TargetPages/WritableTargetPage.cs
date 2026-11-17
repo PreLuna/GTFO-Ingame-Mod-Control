@@ -59,8 +59,17 @@ namespace PreLuna.ModControl.Features
                 typed.Status,
                 displayName + " " + version + " / " + ModControlText.TargetStatusText(snapshot.Descriptor.Status));
             ModControlPageSupport.SetLabel(typed.Result, resultMessage);
-            ModControlPageSupport.SetLabel(typed.CurrentValues, "当前生效：" + ModControlText.FormatValues(snapshot.Effective));
-            ModControlPageSupport.SetLabel(typed.SavedValues, "已保存：" + ModControlText.FormatValues(snapshot.Saved));
+            if (typed is ITargetValueSummary summary && !summary.ShowValueSummaries)
+            {
+                var count = snapshot.Effective.Count;
+                ModControlPageSupport.SetLabel(typed.CurrentValues, "当前生效：" + count + " 项（见上方设置）");
+                ModControlPageSupport.SetLabel(typed.SavedValues, "已保存：" + count + " 项");
+            }
+            else
+            {
+                ModControlPageSupport.SetLabel(typed.CurrentValues, "当前生效：" + ModControlText.FormatValues(snapshot.Effective));
+                ModControlPageSupport.SetLabel(typed.SavedValues, "已保存：" + ModControlText.FormatValues(snapshot.Saved));
+            }
         }
 
         public void OnSettingChanged(FeatureSetting setting, object settings)

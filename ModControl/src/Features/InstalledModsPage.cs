@@ -26,6 +26,7 @@ namespace PreLuna.ModControl.Features
             "PreLuna.EnemyHealthBar", "PreLuna.ThirdPersonHUD", "PreLuna.ThirdPerson",
             "PreLuna.HeadCamera", "PreLuna.MicroMaster", "PreLuna.Captain",
             "PreLuna.FoamGunCustom", "PreLuna.EnemyHealthBar.DamageNumbers",
+            "PreLuna.EnemyHealthBar.BFVFeedback",
             "PreLuna.FlashlightCustom", "PreLuna.PrisonerMovementCustom", "PreLuna.PrisonerHealthCustom",
             "PreLuna.BioScannerCustom", "PreLuna.CoopBotsCustom"
         };
@@ -100,6 +101,37 @@ namespace PreLuna.ModControl.Features
                 ["FontSize"] = "fontSize",
                 ["MaxDistance"] = "maxDistance",
                 ["ShowArmor"] = "showArmor"
+            };
+
+        static readonly IReadOnlyDictionary<string, string> BfvFeedbackKeys =
+            new Dictionary<string, string>(StringComparer.Ordinal)
+            {
+                ["Enabled"] = "enabled",
+                ["FollowHudVisibility"] = "followHudVisibility",
+                ["SoundEnabled"] = "soundEnabled",
+                ["StyleIndex"] = "styleIndex",
+                ["Volume"] = "volume",
+                ["Gain"] = "gain",
+                ["KillGain"] = "killGain",
+                ["KillHighPassHz"] = "killHighPassHz",
+                ["KillChimeEnabled"] = "killChimeEnabled",
+                ["KillChimeVolume"] = "killChimeVolume",
+                ["KillPriorityMs"] = "killPriorityMs",
+                ["MuteVanillaIndicator"] = "muteVanillaIndicator",
+                ["HitMarkerEnabled"] = "hitMarkerEnabled",
+                ["ReplaceVanilla"] = "replaceVanilla",
+                ["HitMarkerSize"] = "hitMarkerSize",
+                ["ArmorFromNoDamage"] = "armorFromNoDamage",
+                ["ColorNormal"] = "colorNormal",
+                ["ColorWeakspot"] = "colorWeakspot",
+                ["ColorArmor"] = "colorArmor",
+                ["ColorKill"] = "colorKill",
+                ["KillIconEnabled"] = "killIconEnabled",
+                ["KillIconSize"] = "killIconSize",
+                ["KillIconOpacity"] = "killIconOpacity",
+                ["KillIconLifetime"] = "killIconLifetime",
+                ["HealthTiering"] = "healthTiering",
+                ["KillIconGap"] = "killIconGap"
             };
 
         static readonly IReadOnlyDictionary<string, string> FlashlightRestartKeys =
@@ -459,6 +491,17 @@ namespace PreLuna.ModControl.Features
                     ModControlInfo.DamageNumbersVersion,
                     DamageNumbersAdapterFactory.TryCreate,
                     DamageNumbersKeys)));
+
+            targetPages.Add(new TargetPageBinding(
+                "BfvFeedback",
+                "BFV 反馈",
+                typeof(BfvFeedbackConfig),
+                () => Settings.BfvFeedback,
+                new WritableTargetPage<BfvFeedbackConfig>(
+                    "BFV 反馈",
+                    ModControlInfo.BfvFeedbackVersion,
+                    BfvFeedbackAdapterFactory.TryCreate,
+                    BfvFeedbackKeys)));
         }
 
         object ResolveSettings(TargetPageBinding binding)
@@ -620,6 +663,9 @@ namespace PreLuna.ModControl.Features
 
             [FSDisplayName("伤害数字")]
             public DamageNumbersConfig DamageNumbers { get; set; } = new DamageNumbersConfig();
+
+            [FSDisplayName("BFV 命中/击杀反馈")]
+            public BfvFeedbackConfig BfvFeedback { get; set; } = new BfvFeedbackConfig();
 
             public FLabel Target01 { get; set; } = new FLabel("", "installed.target01");
             public FLabel Target02 { get; set; } = new FLabel("", "installed.target02");

@@ -34,8 +34,8 @@
     },
     {
       "Path": "IntegrationTests/recipes.json",
-      "SHA256": "BDFA480FB3F5641D778E8E1F224742094087761DE5EA0974BAB8A744510A9484",
-      "Bytes": 11033
+      "SHA256": "B59B6BB509021E598DEE7CF1797D951FA394233FE4650CF4442FFB42D303195B",
+      "Bytes": 11877
     },
     {
       "Path": "ModControl/说明.md",
@@ -46,6 +46,11 @@
       "Path": "ModControl/Resources/Definitions/Module_PreLuna.ModControl_Group_Definition.json",
       "SHA256": "A9CED206D4064EB4FA23CB4B965AEAE7CC17D15DB52EB1E2F971D5BC002BD1AF",
       "Bytes": 791
+    },
+    {
+      "Path": "ModControl/src/Adapters/BfvFeedbackAdapter.cs",
+      "SHA256": "734EFB5E44D5800D82D1677EE50EF798D614EB48580AC16304A469130438939C",
+      "Bytes": 12722
     },
     {
       "Path": "ModControl/src/Adapters/CaptainChineseAdapter.cs",
@@ -119,8 +124,8 @@
     },
     {
       "Path": "ModControl/src/Core/ModControlInfo.cs",
-      "SHA256": "ED8FC52B4BDE404CE0FA8B4F6052A0710D8F0283B94877BFBE5AAF079E513D1B",
-      "Bytes": 1499
+      "SHA256": "934214B2CDF2063C1BC7CF75AACC5B39EA0EB2EEF4D42C0D112D8315754D1F6B",
+      "Bytes": 1641
     },
     {
       "Path": "ModControl/src/Core/ModControlStatus.cs",
@@ -149,18 +154,18 @@
     },
     {
       "Path": "ModControl/src/Core/Operations/SettingDefinition.cs",
-      "SHA256": "1E8A8195D57066F2B55D40CE6CF3BD462D41E5EC2311BF0EAB656996D5D189C8",
-      "Bytes": 2069
+      "SHA256": "46AC240B73EA40C8F1B3A7E92A2D525172151FA86E6B86769B5B1D2FA204A658",
+      "Bytes": 2336
     },
     {
       "Path": "ModControl/src/Core/Operations/SettingKind.cs",
-      "SHA256": "1436EBC3307E4C97AE1246B8EC6602B295F5149ADD9E1F7079C5AC9150A42BE7",
-      "Bytes": 138
+      "SHA256": "6637546656CBEBC96517D03E1BD556AC0D91BBB1B3DD1C8C6F8822BBE6E149DC",
+      "Bytes": 154
     },
     {
       "Path": "ModControl/src/Core/Operations/SettingValue.cs",
-      "SHA256": "7F52CD9E755B6786C35C8A8D5AFC017C824E2187913360C94B53926F7F010232",
-      "Bytes": 1896
+      "SHA256": "404DDD0DB80B24B45979AA5370507BD0A9DB7C6BEF61BC51446749FD6B28E0AC",
+      "Bytes": 2304
     },
     {
       "Path": "ModControl/src/Core/Operations/TargetCapabilities.cs",
@@ -196,6 +201,11 @@
       "Path": "ModControl/src/Core/TargetCatalog.cs",
       "SHA256": "DCF72E1823A941210F495749D95EBF392670330DBC5B2B87996B41CD746CA4B8",
       "Bytes": 1346
+    },
+    {
+      "Path": "ModControl/src/Features/BfvFeedbackConfig.cs",
+      "SHA256": "F524E240D18D2FF356ECFAF680E01BCAF1CDE00E0B44510C4E81645A3C5F08B8",
+      "Bytes": 9712
     },
     {
       "Path": "ModControl/src/Features/CaptainBotRestartConfig.cs",
@@ -234,8 +244,8 @@
     },
     {
       "Path": "ModControl/src/Features/InstalledModsPage.cs",
-      "SHA256": "2E33F91272ACB02BB313B86B637A1C9D4D3B225FD09713B579FD61C02F9A195B",
-      "Bytes": 29150
+      "SHA256": "7356C461E5353213A9FA833D7E0C425919B36ADD6E4EA9900E97234DE6EF16AD",
+      "Bytes": 31327
     },
     {
       "Path": "ModControl/src/Features/MicroMasterConfig.cs",
@@ -309,8 +319,8 @@
     },
     {
       "Path": "ModControl/src/Features/TargetPages/ITargetPage.cs",
-      "SHA256": "A879FFC0C84654207E5AFB689CE6CE7F3796CF3B057C1EC04B784E42D03C9012",
-      "Bytes": 1471
+      "SHA256": "57FAD2800E6F7DB46A99A04F0FD26169E033FB956A59F856F2B97C2268EF8933",
+      "Bytes": 1749
     },
     {
       "Path": "ModControl/src/Features/TargetPages/ModControlText.cs",
@@ -334,13 +344,13 @@
     },
     {
       "Path": "ModControl/src/Features/TargetPages/TargetValueReader.cs",
-      "SHA256": "0852F88B756CD06D5106B699B37709A5AF9B1C852ADC9E388C80FCA1656DC00F",
-      "Bytes": 1756
+      "SHA256": "1F0AB3AA2DAE244B361AD55F1B937E8DDCAAD4DD4F61A3777901E14C7070949D",
+      "Bytes": 2416
     },
     {
       "Path": "ModControl/src/Features/TargetPages/WritableTargetPage.cs",
-      "SHA256": "3F4966386C8D2196D044A291439F958DEA638D69804452A503BDE1B363C17815",
-      "Bytes": 5279
+      "SHA256": "ECAC45382843736EDD3410BD19F0834E9C4CE52BB97C32BDC494676FCC643D23",
+      "Bytes": 5725
     },
     {
       "Path": "ModControl/src/Features/ThirdPersonConfig.cs",
@@ -354,8 +364,8 @@
     },
     {
       "Path": "ModControl/src/Plugin.cs",
-      "SHA256": "B4CBF995D85A83581B98902C430BC781366CFF34157AF92E13C75ACC1BB71460",
-      "Bytes": 2001
+      "SHA256": "8CCAB1401C470CF19D56320225307B269D564DF66C14DC4712980CF3FB0DDCBF",
+      "Bytes": 2103
     },
     {
       "Path": "ModControl/src/Runtime/ModControlEnvironment.cs",
@@ -383,6 +393,11 @@
       "Bytes": 1139
     },
     {
+      "Path": "ModControl/tests/Adapters/BfvFeedbackAdapterTests.cs",
+      "SHA256": "4E0D55A1052F796623D648505E16CBE975292B1222E69A05B9C15097764A2450",
+      "Bytes": 2579
+    },
+    {
       "Path": "ModControl/tests/Adapters/CaptainChineseAdapterTests.cs",
       "SHA256": "98A63B3A2E8BB0D430BCB7F90575B5F4655B5F1813DD3E9DAA84DD717C36F347",
       "Bytes": 2236
@@ -396,6 +411,11 @@
       "Path": "ModControl/tests/Adapters/FakeBepInExPaths.cs",
       "SHA256": "DED3156DE9A47586FFE3A87B69D5838E742587596F557F63249AE3AC4E2F198A",
       "Bytes": 191
+    },
+    {
+      "Path": "ModControl/tests/Adapters/FakeBfvFeedbackControlApi.cs",
+      "SHA256": "D0B3EA6E5DB729FB91BCC13F25BBEB1B6247330ECC868BB64F4131E491E67FC3",
+      "Bytes": 1505
     },
     {
       "Path": "ModControl/tests/Adapters/FakeCaptainControlApi.cs",
@@ -514,13 +534,13 @@
     },
     {
       "Path": "README.md",
-      "SHA256": "77173C62F68CD7C7FFD9C092237074E4BAFD2A3A385529C73882B2C603CDFA80",
-      "Bytes": 21014
+      "SHA256": "05187CAFB170DA798DB3F56EEFB7DB50668731BEE601E99B9045FCA6A9A5D9E6",
+      "Bytes": 21197
     },
     {
       "Path": "repo.json",
-      "SHA256": "85BE1B9B3844EBE1327BFC68004D5C2240102B6060EAE1B1AC83355EF1C447D9",
-      "Bytes": 3156
+      "SHA256": "EA56CCABEE5CD00718AA279A6E739004DD284814B17E0F583DE6FC7444212971",
+      "Bytes": 3369
     },
     {
       "Path": "Test.ps1",

@@ -16,6 +16,7 @@ namespace PreLuna.ModControl.Core.Operations
         public static SettingValue Boolean(bool value) => new SettingValue(SettingKind.Boolean, value);
         public static SettingValue Integer(int value) => new SettingValue(SettingKind.Integer, value);
         public static SettingValue Number(double value) => new SettingValue(SettingKind.Number, value);
+        public static SettingValue String(string value) => new SettingValue(SettingKind.String, value ?? string.Empty);
 
         public bool TryGetBoolean(out bool value)
         {
@@ -50,6 +51,18 @@ namespace PreLuna.ModControl.Core.Operations
             }
 
             value = 0;
+            return false;
+        }
+
+        public bool TryGetString(out string value)
+        {
+            if (Kind == SettingKind.String && Raw is string typed)
+            {
+                value = typed;
+                return true;
+            }
+
+            value = string.Empty;
             return false;
         }
 

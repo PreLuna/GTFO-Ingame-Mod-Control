@@ -3,7 +3,7 @@ namespace PreLuna.ModControl.Core
     public static class ModControlInfo
     {
         public const string Guid = "PreLuna.ModControl";
-        public const string Version = "0.3.3";
+        public const string Version = "0.3.4";
         public const string DisplayName = "PreLuna 游戏内统一管理";
         public const string ArchiveGuid = "dev.AuriRex.gtfo.TheArchive";
         public const string ExpectedArchiveVersion = "0.0.838";
@@ -24,5 +24,7 @@ namespace PreLuna.ModControl.Core
         public const string FoamGunVersion = "1.0.2";
         public const string DamageNumbersGuid = "PreLuna.EnemyHealthBar.DamageNumbers";
         public const string DamageNumbersVersion = "0.1.1";
+        public const string BfvFeedbackGuid = "PreLuna.EnemyHealthBar.BFVFeedback";
+        public const string BfvFeedbackVersion = "0.2.0";
     }
 }

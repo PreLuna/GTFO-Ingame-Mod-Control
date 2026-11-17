@@ -282,5 +282,25 @@
     "Arguments": [
       "out/tests/DamageNumbersAdapterTests.json"
     ]
+  },
+  {
+    "Name": "BfvFeedbackAdapterTests",
+    "Sources": [
+      "ModControl/src/Core/Operations/SettingKind.cs",
+      "ModControl/src/Core/Operations/SettingValue.cs",
+      "ModControl/src/Core/Operations/Validation.cs",
+      "ModControl/src/Core/Operations/SettingDefinition.cs",
+      "ModControl/src/Core/Operations/TargetCapabilities.cs",
+      "ModControl/src/Core/Operations/TargetDescriptor.cs",
+      "ModControl/src/Core/Operations/TargetSnapshot.cs",
+      "ModControl/src/Core/Operations/ChangeSet.cs",
+      "ModControl/src/Core/Operations/ProviderContracts.cs",
+      "ModControl/src/Adapters/BfvFeedbackAdapter.cs",
+      "ModControl/tests/Adapters/FakeBfvFeedbackControlApi.cs",
+      "ModControl/tests/Adapters/BfvFeedbackAdapterTests.cs"
+    ],
+    "Arguments": [
+      "out/tests/BfvFeedbackAdapterTests.json"
+    ]
   }
 ]

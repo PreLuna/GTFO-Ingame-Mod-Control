@@ -16,6 +16,15 @@ namespace PreLuna.ModControl.Features
     }
 
     /// <summary>
+    /// Optional page hint: targets with many fields can hide the full effective/saved
+    /// value dump so it cannot overlap the settings rows.
+    /// </summary>
+    public interface ITargetValueSummary
+    {
+        bool ShowValueSummaries { get; }
+    }
+
+    /// <summary>
     /// Settings object that can both expose page labels and accept a target snapshot.
     /// A target adapter never touches this object during a save; it only provides data.
     /// </summary>

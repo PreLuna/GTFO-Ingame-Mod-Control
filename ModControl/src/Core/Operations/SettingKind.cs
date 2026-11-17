@@ -4,6 +4,7 @@ namespace PreLuna.ModControl.Core.Operations
     {
         Boolean,
         Integer,
-        Number
+        Number,
+        String
     }
 }
