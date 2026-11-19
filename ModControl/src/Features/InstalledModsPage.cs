@@ -51,7 +51,9 @@ namespace PreLuna.ModControl.Features
                 ["Personal"] = "personal",
                 ["Team"] = "team",
                 ["Scene"] = "scene",
-                ["Alerts"] = "alerts"
+                ["Alerts"] = "alerts",
+                ["ShortPrompt"] = "shortPrompt",
+                ["HideNativePrompt"] = "hideNativePrompt"
             };
 
         static readonly IReadOnlyDictionary<string, string> ThirdPersonKeys =

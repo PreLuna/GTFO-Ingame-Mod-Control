@@ -29,10 +29,13 @@ static class ThirdPersonHudAdapterTests
             Check(adapter != null, "adapter");
             var snapshot = adapter.ReadSnapshot();
             Check(snapshot.Descriptor.Status == TargetStatus.Available, "status");
-            Check(snapshot.Descriptor.Version == "0.13.1", "version");
-            Check(snapshot.Descriptor.Settings.Count == 7, "settings");
+            Check(snapshot.Descriptor.Version == "0.15.2", "version");
+            Check(snapshot.Descriptor.Settings.Count == 9, "settings");
             Check(snapshot.Revision == "7", "revision");
             Check(snapshot.Descriptor.Find("panel") != null, "panel definition");
+            Check(snapshot.Descriptor.Find("shortPrompt") != null, "shortPrompt definition");
+            Check(snapshot.Descriptor.Find("hideNativePrompt") != null, "hideNativePrompt definition");
+            Check(snapshot.TryGetEffective("shortPrompt", out var shortPrompt) && shortPrompt.TryGetBoolean(out var enabled) && enabled, "shortPrompt value");
             Check(snapshot.TryGetEffective("panel", out var value) && value.TryGetBoolean(out var panel) && panel, "panel value");
         });
 

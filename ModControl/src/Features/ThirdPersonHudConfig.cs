@@ -11,6 +11,8 @@ namespace PreLuna.ModControl.Features
         static bool team = true;
         static bool scene = true;
         static bool alerts = true;
+        static bool shortPrompt;
+        static bool hideNativePrompt;
 
         public FLabel Status { get; set; } = new FLabel("第三人称 HUD：正在读取…", "tph.status");
         public FLabel Result { get; set; } = new FLabel("", "tph.result");
@@ -25,6 +27,8 @@ namespace PreLuna.ModControl.Features
             Team = TargetValueReader.Bool(snapshot, "team", true);
             Scene = TargetValueReader.Bool(snapshot, "scene", true);
             Alerts = TargetValueReader.Bool(snapshot, "alerts", true);
+            ShortPrompt = TargetValueReader.Bool(snapshot, "shortPrompt", false);
+            HideNativePrompt = TargetValueReader.Bool(snapshot, "hideNativePrompt", false);
         }
 
         [FSDisplayName("角色旁面板")]
@@ -60,6 +64,20 @@ namespace PreLuna.ModControl.Features
         {
             get => alerts;
             set => alerts = value;
+        }
+
+        [FSDisplayName("1b 短提示")]
+        public bool ShortPrompt
+        {
+            get => shortPrompt;
+            set => shortPrompt = value;
+        }
+
+        [FSDisplayName("1b 隐藏原版提示")]
+        public bool HideNativePrompt
+        {
+            get => hideNativePrompt;
+            set => hideNativePrompt = value;
         }
     }
 }

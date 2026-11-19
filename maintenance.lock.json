@@ -124,8 +124,8 @@
     },
     {
       "Path": "ModControl/src/Core/ModControlInfo.cs",
-      "SHA256": "934214B2CDF2063C1BC7CF75AACC5B39EA0EB2EEF4D42C0D112D8315754D1F6B",
-      "Bytes": 1641
+      "SHA256": "614FC18FD02207964B07DB1FB34CAAEF9E51EF30344968249D78324D05BFBD57",
+      "Bytes": 1642
     },
     {
       "Path": "ModControl/src/Core/ModControlStatus.cs",
@@ -244,8 +244,8 @@
     },
     {
       "Path": "ModControl/src/Features/InstalledModsPage.cs",
-      "SHA256": "7356C461E5353213A9FA833D7E0C425919B36ADD6E4EA9900E97234DE6EF16AD",
-      "Bytes": 31327
+      "SHA256": "3BC11C48617947213994F101AFC9A4EAE40BEB5345CEC2DBD4CDFC4EBDD44271",
+      "Bytes": 31435
     },
     {
       "Path": "ModControl/src/Features/MicroMasterConfig.cs",
@@ -359,8 +359,8 @@
     },
     {
       "Path": "ModControl/src/Features/ThirdPersonHudConfig.cs",
-      "SHA256": "05679334CFCEFC4EDF619274E43F3B87BE5A008178086916EB0DBE5AC2C561C2",
-      "Bytes": 2029
+      "SHA256": "351AB36E274F8CDB76F24673543B14D5AF55E2121126CC45292F2CD29DBC8AA2",
+      "Bytes": 2628
     },
     {
       "Path": "ModControl/src/Plugin.cs",
@@ -449,8 +449,8 @@
     },
     {
       "Path": "ModControl/tests/Adapters/FakeThirdPersonHudControlApi.cs",
-      "SHA256": "BC3CFE9939D5160D443C178D0975E138350CC2AE08A84E49A0D9EF68C358B359",
-      "Bytes": 2535
+      "SHA256": "0E5B95078B30A37B4B4580C81B114A850D2285140E367ACEF2F74B55284F2298",
+      "Bytes": 3011
     },
     {
       "Path": "ModControl/tests/Adapters/FoamGunAdapterTests.cs",
@@ -484,8 +484,8 @@
     },
     {
       "Path": "ModControl/tests/Adapters/ThirdPersonHudAdapterTests.cs",
-      "SHA256": "765A1FA75658913D756C33F872AFABE560B29F48ADE763ABCE0475436C6C7E10",
-      "Bytes": 2821
+      "SHA256": "173BF6469A864CE89E67A499F17B39CD182886FBA5B9E7C0BD7EEEE963BCC782",
+      "Bytes": 3178
     },
     {
       "Path": "ModControl/tests/Operations/FakeTargetProvider.cs",
@@ -534,12 +534,12 @@
     },
     {
       "Path": "README.md",
-      "SHA256": "AE6A2F69511EB88E1BD4F727F2679AD4DF03578109A0A971AA6D2EC4A3758D43",
-      "Bytes": 21192
+      "SHA256": "D8597B758709C7A1614FACE8A0D451897ACC8E7DE813872DBAB59C8C01C01396",
+      "Bytes": 21273
     },
     {
       "Path": "repo.json",
-      "SHA256": "EA56CCABEE5CD00718AA279A6E739004DD284814B17E0F583DE6FC7444212971",
+      "SHA256": "DF4C42B45DB15F74CD679CF7EA8921FEB7C306F4407308325992340CEDB6ADA7",
       "Bytes": 3369
     },
     {

@@ -2,7 +2,7 @@
 
 PreLuna 游戏内统一 MOD 管理入口。通过 TheArchive 的扩展接口呈现页面，调用已接入 MOD 的配置能力，保留各 MOD 的独立安装与运行方式。
 
-**当前阶段：2026-11-17 0.3.4 已接入 BFV 反馈目标与 String 值类型；BFV 0.2.0 的“BFV 反馈”单列页提供 26 项即时配置（四个颜色用 TheArchive 原生 `SColor` 拾色器）。** 0.3.3 的 17 个目标、ThirdPerson/HeadCamera/MicroMaster 可写页、七个冻结只读页、C6 基础均保留；新增 BFV 适配器 2 项测试，ModControl 现 18 组 66 项离线测试通过。BFV 控制 API 启动探针显示 `settings=26`，ModControl 0.3.4 已安装并启动；**用户已确认页面显示、26 项摘要压缩、颜色 Apply 即时变色、重启后读回通过；面板页与拾色器已验收**。已删除 Draft、ApplyTemporary、SaveAsDefault、RestoreSaved、CommitDeferred、Deferred/Restart 策略及对应旧测试；C2 草稿模型只保留为历史设计记录。已知：恢复默认已删除；滑块归一化显示已改为实际值；共享文件保护已以通用修订守卫和目标端行级存储落地，Captain 多模块共享配置尚未接入。已提交/推送远端 main；未发布 Release。
+**当前阶段：2026-11-19 0.3.5 将 ThirdPersonHUD 1b 的 `ShortPrompt`/`HideNativePrompt` 接入“第三人称HUD配置”页；两个开关默认关闭、运行中即时保存，只影响本机 HUD 视觉，不写服务器/不改原版交互。** 0.3.4 已接入 BFV 反馈目标与 String 值类型；BFV 0.2.0 的“BFV 反馈”单列页提供 26 项即时配置（四个颜色用 TheArchive 原生 `SColor` 拾色器）。0.3.3 的 17 个目标、ThirdPerson/HeadCamera/MicroMaster 可写页、七个冻结只读页、C6 基础均保留；ModControl 现 18 组离线测试通过。已删除 Draft、ApplyTemporary、SaveAsDefault、RestoreSaved、CommitDeferred、Deferred/Restart 策略及对应旧测试；C2 草稿模型只保留为历史设计记录。已知：恢复默认已删除；滑块归一化显示已改为实际值；共享文件保护已以通用修订守卫和目标端行级存储落地，Captain 多模块共享配置尚未接入。已提交/推送远端 main；未发布 Release。
 
 [定位入口](#modules) · [页面与操作](#usage) · [依赖与兼容](#relations) · [开发与验收](#development) · [来源说明](#sources)
 
@@ -11,7 +11,7 @@ PreLuna 游戏内统一 MOD 管理入口。通过 TheArchive 的扩展接口呈�
 
 | 对象 | 入口 | 当前状态 |
 | --- | --- | --- |
-| 机器登记 | [repo.json](repo.json) | `ModControl` 活动模块＋`ModControl.Resources` 数据模块；版本 0.3.4 |
+| 机器登记 | [repo.json](repo.json) | `ModControl` 活动模块＋`ModControl.Resources` 数据模块；版本 0.3.5 |
 | 运行源码 | [ModControl/src](ModControl/src) | BepInEx 入口＋手动 ArchiveModule 注册＋三个只读 Feature 页面（静态 `[FeatureConfig]` 设置属性） |
 | 操作模型源码 | [ModControl/src/Core/Operations](ModControl/src/Core/Operations) | 即时保存、P／R、校验、能力/权限、修订检查与协调器；无草稿/临时应用/恢复路径 |
 | 离线测试 | [ModControl/tests](ModControl/tests) | 18 组 66 项纯逻辑/资源/存储/适配器测试；不加载游戏、不写目标配置 |
@@ -19,7 +19,7 @@ PreLuna 游戏内统一 MOD 管理入口。通过 TheArchive 的扩展接口呈�
 | 页面组织、状态模型、配置归属与操作协议 | [设计细节](docs/DESIGN.md) | 设计基线 v1；C1～C4 已落地，C5 目标扩展完成并经用户验收，C6 滑块显示子项已落地 |
 | 原型、施工阶段、验收矩阵与回退 | [施工计划](docs/IMPLEMENTATION_PLAN.md) | C1～C4 完成；C5 目标扩展已验收；阶段 A 0.2.1、阶段 B 0.2.2 已验收；0.3.4 新增 BFV 反馈页（26 项）、String 目标值与 `SColor` 拾色器，18组66项离线通过并获用户验收 |
 
-模块名 `ModControl`，程序集与插件 GUID `PreLuna.ModControl`，版本 `0.3.4`。构建输出为 `PreLuna.ModControl.dll` 与 `Definitions/Module_PreLuna.ModControl_Group_Definition.json`；游戏目标目录沿用 `BepInEx/plugins/本地定制/PreLuna.ModControl/`。已提交/推送远端 main；未发布 Release；`out` 仅为可重建临时输出。0.3.4 将 `PreLuna.EnemyHealthBar.dll` 外部引用固定到本机已交付父 0.4.0 的 SHA256 `E946D90747E37A712B6CD8134CA48DA0901FA6D6952E1C257E06296BEC99C30C`（旧 `78205D…` 在本机依赖目录不存在，会阻断构建）。
+模块名 `ModControl`，程序集与插件 GUID `PreLuna.ModControl`，版本 `0.3.5`。构建输出为 `PreLuna.ModControl.dll` 与 `Definitions/Module_PreLuna.ModControl_Group_Definition.json`；游戏目标目录沿用 `BepInEx/plugins/本地定制/PreLuna.ModControl/`。已提交/推送远端 main；未发布 Release；`out` 仅为可重建临时输出。0.3.5 将 `ThirdPersonHUD` 目标版本标识更新为 0.15.2，新增两个 1b 布尔项；0.3.4 将 `PreLuna.EnemyHealthBar.dll` 外部引用固定到本机已交付父 0.4.0 的 SHA256 `E946D90747E37A712B6CD8134CA48DA0901FA6D6952E1C257E06296BEC99C30C`。
 
 <a id="usage"></a>
 ## 页面与操作
@@ -73,11 +73,11 @@ C4 验收后按“代码只保留最终方案”清理：
 
 C5 按用户选择先接两个目标；Captain 中文显示后续通过 Captain 目标侧 API 接入，不直接改共享 CFG：
 
-- **`ThirdPersonHUD` 0.13.1（可写，本地视觉）**：目标仓新增 `ThirdPersonHudControlApi`，暴露角色旁面板、个人读数、队伍摘要、场景提示、提示区五个开关及面板缩放/宽度；控制状态使用 `HudConfigFileStore` 按文件修订和受管行写入，保留注释、未知键和其他设置。ModControl 通过 `ThirdPersonHudAdapterFactory` 按类型名隔离解析，使用目标提供的 `GetSnapshotJson/ValidateJson/SetPersistentJson` JSON 桥，不静态引用 HUD 程序集；页面入口为 `已接入 MOD → 第三人称HUD配置`。
+- **`ThirdPersonHUD` 0.15.2（可写，本地视觉）**：目标仓新增 `ThirdPersonHudControlApi`，暴露角色旁面板、个人读数、队伍摘要、场景提示、提示区、1b 短提示、1b 隐藏原版提示七个开关及面板缩放/宽度；控制状态使用 `HudConfigFileStore` 按文件修订和受管行写入，保留注释、未知键和其他设置。ModControl 通过 `ThirdPersonHudAdapterFactory` 按类型名隔离解析，使用目标提供的 `GetSnapshotJson/ValidateJson/SetPersistentJson` JSON 桥，不静态引用 HUD 程序集；页面入口为 `已接入 MOD → 第三人称HUD配置`。
 - **`PrisonerMovementCustom`（冻结只读）**：不修改冻结 DLL，只读取 `PreLuna.PrisonerMovementCustom.cfg` 的 `[APEX: Prisoners]` 三个开关，展示为只读页 `已接入 MOD → 移动与生命（只读）`；descriptor 标记 `ReadOnly` 且 `PermissionGranted=false`，不提供写入。
 - **通用共享文件保护**：`ConfigFileRevisionStore` 提供文件指纹、期望修订、冲突拒绝、行级更新、注释/未知键保留和原子替换，离线覆盖双写冲突、外部修改、缺失文件创建；Captain 中文显示由目标侧 API 接入，仍不直接改共享文件。
-- **权限/联机边界**：HUD/伤害为本地视觉；冻结模块只写本地 CFG、重启生效；Captain bot/强化剂为重启CFG页；默认策略只读；没有新增网络同步或客机写权限。
-- **时限**：本轮 HUD 五个开关均为运行中即时生效，没有需要延迟到重启/下次应用的字段；通用安全时机队列未产生运行路径，待后续目标暴露延迟字段时再接。
+- **权限/联机边界**：HUD/伤害为本地视觉，只改本机屏幕，不写入服务器、不同步给其他玩家；冻结模块只写本地 CFG、重启生效；Captain bot/强化剂为重启CFG页；默认策略只读；没有新增网络同步或客机写权限。
+- **时限**：本轮 HUD 七个开关均为运行中即时生效，没有需要延迟到重启/下次应用的字段；通用安全时机队列未产生运行路径，待后续目标暴露延迟字段时再接。
 
 目标、适配器、存储测试已离线通过；HUD 页面已在实机打开，显示 `0.13.1 / AVAILABLE`、五个开关和实际 `PANELWIDTH=304`（非静态默认），说明反射适配器、JSON 快照和面板初始化链路已通。开关写入、重开和 `移动与生命（只读）` 页已由用户 2026-11-08 实机确认正常。
 
