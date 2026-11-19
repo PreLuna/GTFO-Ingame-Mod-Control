@@ -24,6 +24,13 @@ namespace PreLuna.ModControl.Runtime
             log = source;
         }
 
+        internal static void RecordKeybindResult(string property, string key, string result)
+        {
+            var message = "[按键保存] " + property + "=" + key + "; " + result;
+            if (log != null) log.LogInfo(message);
+            else archiveLogger?.Info(message);
+        }
+
         internal static void AttachArchiveLogger(IArchiveLogger logger)
         {
             archiveLogger = logger;

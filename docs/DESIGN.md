@@ -160,3 +160,16 @@ C2 基线没有默认自动执行的“应用并保存”，避免临时试调�
 - **阶段 C 本地控制少量可写**：ThirdPerson 0.6.3 提供镜头 5 字段；HeadCamera 0.3.16 提供 6 字段（本机玩家）；MicroMaster 0.5.18 提供 6 字段（bot 相关仅装 MOD 的主机玩家）。三层控制状态都只更新受管 CFG 行。MicroMaster 页显示“主机提示”，HeadCamera 页显示“本机提示”，不禁止编辑；客机修改仅本地保存，不新增网络同步。Captain 只读页显示“权限：只读不写；bot/强化剂仅主机装MOD生效”，本轮不开放写入。写入时目标侧临时关闭 `Config.SaveOnConfigSet`，完成后恢复；热键引起的内部保存会被状态吸收，外部文件变化仍返回冲突。
 - **C6 诊断/中文**：目标状态和操作结果通过 `ModControlText` 中文化；诊断页显示分辨率、菜单输入状态和更新/刷新计数，均为只读观测，不改变输入焦点、渲染或布局。
 - **C5 目标扩展与共享文件保护**：`ThirdPersonHUD 0.13.1` 提供 `ThirdPersonHudControlApi`，通过 `HudConfigFileStore` 按文件修订和受管行写入，保留注释/未知键；ModControl 用软依赖 + 类型名隔离 + JSON 桥接入，不静态引用 HUD 程序集。`PrisonerMovementCustom` 冻结只读，只读取 `PreLuna.PrisonerMovementCustom.cfg` 的 `[APEX: Prisoners]` 三个开关，descriptor 标记 `ReadOnly`、`PermissionGranted=false`。`ConfigFileRevisionStore` 在 ModControl 核心提供文件指纹/冲突/行级写入守卫及测试；本轮未接 Captain 共享配置。HUD 设置均为本地视觉即时项，没有延迟字段，因此安全时机队列暂无运行路径。
+
+
+## 按键管理首版（2026-11-19）
+
+采用独立一级“按键绑定”页，18项集中按MOD分组。KeybindSession只聚合显式适配目标的现有控制快照，不扫描／写入任意第三方CFG；修改经原目标的校验、修订守卫和行级存储，权威配置继续属于原MOD。整数 `key.*` 经目标运行端按Unity KeyCode合法性校验并序列化为原CFG键名，如F6／None；JSON整数类型沿用原契约，无新增共享程序集。旧版目标无该字段时不可写。
+
+原生KeySetting提供单键录入与Esc清除；按住／单击／双击语义继续由目标实现，T共享入口只登记一次。重复检测只比较已接入18项的非None实际值，不自动换键、不声明按生效场景消除冲突，也不涵盖原版／第三方按键。按键页定时读回外部运行变化，不重建录入控件；重复功能每项单行显示，避免多行FLabel叠字。HUD恢复和微操紧急键在菜单／聊天期间不响应，游戏输入屏蔽由原生控件及目标焦点判断共同承担；完整游戏验证仍为首版退出条件。
+
+
+0.3.7／ThirdPerson 0.6.32保存修复：不把任意磁盘变更自动当作合法新基线。原MOD成功自动保存后，以SettingChanged且SaveOnConfigSet=true同步受管状态的文件指纹；受控写入期间false，不触发吸收；之后的外部修改仍拒绝。管理页逐次记录请求键和成功／拒绝原因，帮助区分录入与存储失败。
+
+
+2026-11-19验收收尾：采用一级集中入口，首批18项、目标拥有CFG与输入执行、重复只提示、T共享手势、None清除等边界按[README按键说明](../README.md#keybindings)执行。0.3.7／ThirdPerson0.6.32已通过本轮换肩／观察改绑保持与游戏重启保留的用户确认；不扩大成全部目标逐项实机矩阵。保存修订只接受已成功自动Save后的明确通知，受控写入仍保留外部编辑拒绝。

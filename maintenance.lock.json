@@ -19,13 +19,13 @@
     },
     {
       "Path": "docs/DESIGN.md",
-      "SHA256": "36D80C8E2B8B5D374F10074071E3C6F6A3D7B3DB786339C77A357196F7E9C864",
-      "Bytes": 23134
+      "SHA256": "7F89808539893CC11D7294A0461BB7BC4538AEFA1AEB13EDEB474B44A3D751AA",
+      "Bytes": 25083
     },
     {
       "Path": "docs/IMPLEMENTATION_PLAN.md",
-      "SHA256": "7FB475DB29BF795A1AF6B41B4FA56AA8D18F8B101920B49F567F49AA0CB57066",
-      "Bytes": 16350
+      "SHA256": "10131B1A8B5AA374994FCD5F2D7141CCB4E08B922B9D9AD8C4CE57509618F6AD",
+      "Bytes": 17383
     },
     {
       "Path": "docs/TARGET_INTEGRATION.md",
@@ -34,8 +34,8 @@
     },
     {
       "Path": "IntegrationTests/recipes.json",
-      "SHA256": "B59B6BB509021E598DEE7CF1797D951FA394233FE4650CF4442FFB42D303195B",
-      "Bytes": 11877
+      "SHA256": "D82CB6ECD6098660AFE694018222440BE3AF273361DE49C3EE66A55CB4D9E1B6",
+      "Bytes": 12760
     },
     {
       "Path": "ModControl/说明.md",
@@ -123,8 +123,13 @@
       "Bytes": 530
     },
     {
+      "Path": "ModControl/src/Core/Keybinds/KeybindSession.cs",
+      "SHA256": "257F565EEDC509C8061FBE20CDB346C9EFCEF09579B562239037DF0507A9E225",
+      "Bytes": 4144
+    },
+    {
       "Path": "ModControl/src/Core/ModControlInfo.cs",
-      "SHA256": "614FC18FD02207964B07DB1FB34CAAEF9E51EF30344968249D78324D05BFBD57",
+      "SHA256": "995D40D8D82BB1E4908F5C47192DD6A730BD298625BB5FBF4C9DC570CD9E4300",
       "Bytes": 1642
     },
     {
@@ -248,6 +253,11 @@
       "Bytes": 31435
     },
     {
+      "Path": "ModControl/src/Features/KeybindsPage.cs",
+      "SHA256": "8A1F88333E2539DC84E35F427CC6D5D5992D621F61140D2F7BB8025802F1A598",
+      "Bytes": 17021
+    },
+    {
       "Path": "ModControl/src/Features/MicroMasterConfig.cs",
       "SHA256": "0DE144159012E66DEF9C6B7476A122A19C2C0FCB97766F73F0EAF7ECB786130F",
       "Bytes": 2987
@@ -324,8 +334,8 @@
     },
     {
       "Path": "ModControl/src/Features/TargetPages/ModControlText.cs",
-      "SHA256": "A4CA31B9E718FA887841417B2068EEB8CC034EC155A0F438F76F574295BC03C0",
-      "Bytes": 3338
+      "SHA256": "7B63860DFDC83C52CC0A515E10C2623728DE6264E93CE45E41A2B87A37D1169C",
+      "Bytes": 3434
     },
     {
       "Path": "ModControl/src/Features/TargetPages/ReadOnlyCfgPage.cs",
@@ -384,8 +394,8 @@
     },
     {
       "Path": "ModControl/src/Runtime/ModControlRuntime.cs",
-      "SHA256": "2E2AD3323847C6D8B1FF9F134AB4F0B07EB9E24AA5B8AF697A77D54FD857D1C9",
-      "Bytes": 3386
+      "SHA256": "CC84F376E51FC105A502F3DBE398E0E8624715C233A732C1EB5C1805574DDB10",
+      "Bytes": 3682
     },
     {
       "Path": "ModControl/src/Runtime/PluginCatalog.cs",
@@ -488,6 +498,11 @@
       "Bytes": 3178
     },
     {
+      "Path": "ModControl/tests/KeybindSessionTests.cs",
+      "SHA256": "76778D29536BD82CADC249D53685793602E6363602B4259A2A5EA472607C19EE",
+      "Bytes": 5341
+    },
+    {
       "Path": "ModControl/tests/Operations/FakeTargetProvider.cs",
       "SHA256": "465E41BF6821214B71693ADEB43CAB9BB589882494016F3F41218807725DD8FE",
       "Bytes": 3794
@@ -534,12 +549,12 @@
     },
     {
       "Path": "README.md",
-      "SHA256": "D8597B758709C7A1614FACE8A0D451897ACC8E7DE813872DBAB59C8C01C01396",
-      "Bytes": 21273
+      "SHA256": "8C7A96F3E050733CEF229671F9E41DCED01F037DC90A3705310BB5059F62BDEA",
+      "Bytes": 24351
     },
     {
       "Path": "repo.json",
-      "SHA256": "DF4C42B45DB15F74CD679CF7EA8921FEB7C306F4407308325992340CEDB6ADA7",
+      "SHA256": "9F93706CCFF056F02DFEEC776E1EBDC7C91AD19064593489D551EEC04F4A2AFD",
       "Bytes": 3369
     },
     {

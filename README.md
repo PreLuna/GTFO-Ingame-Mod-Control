@@ -1,38 +1,63 @@
 # GTFO-Ingame-Mod-Control
 
-PreLuna 游戏内统一 MOD 管理入口。通过 TheArchive 的扩展接口呈现页面，调用已接入 MOD 的配置能力，保留各 MOD 的独立安装与运行方式。
+PreLuna 游戏内统一 MOD 管理入口，通过 TheArchive 原生页面调用各 MOD 的配置能力，保留各 MOD 独立安装与运行方式。
 
-**当前阶段：2026-11-19 0.3.5 将 ThirdPersonHUD 1b 的 `ShortPrompt`/`HideNativePrompt` 接入“第三人称HUD配置”页；两个开关默认关闭、运行中即时保存，只影响本机 HUD 视觉，不写服务器/不改原版交互。** 0.3.4 已接入 BFV 反馈目标与 String 值类型；BFV 0.2.0 的“BFV 反馈”单列页提供 26 项即时配置（四个颜色用 TheArchive 原生 `SColor` 拾色器）。0.3.3 的 17 个目标、ThirdPerson/HeadCamera/MicroMaster 可写页、七个冻结只读页、C6 基础均保留；ModControl 现 18 组离线测试通过。已删除 Draft、ApplyTemporary、SaveAsDefault、RestoreSaved、CommitDeferred、Deferred/Restart 策略及对应旧测试；C2 草稿模型只保留为历史设计记录。已知：恢复默认已删除；滑块归一化显示已改为实际值；共享文件保护已以通用修订守卫和目标端行级存储落地，Captain 多模块共享配置尚未接入。已提交/推送远端 main；未发布 Release。
+当前源码版本 **ModControl 0.3.7**，提供“概览、已接入 MOD、按键绑定、状态与诊断”四个一级页面。按键页集中管理第三人称、HUD、头戴摄像头和微操大师的18项现有绑定，逐项即时保存到原 MOD CFG。配套 ThirdPerson 0.6.32 修复正常热键自动保存后的假冲突。用户2026-11-19确认“测试通过，保持新键，重启后可以保留”，本轮左右换肩／站定观察保存修复通过；不据此扩展为18项全部逐项或其他场景通过。
 
-[定位入口](#modules) · [页面与操作](#usage) · [依赖与兼容](#relations) · [开发与验收](#development) · [来源说明](#sources)
+源码提交与正式安装 Release 分开管理；本次整理包含功能、修复和验收记录，不创建 Release。
+
+[定位入口](#modules) · [页面与操作](#usage) · [按键绑定](#keybindings) · [依赖与兼容](#relations) · [开发与验收](#development) · [来源说明](#sources)
 
 <a id="modules"></a>
 ## 定位入口
 
 | 对象 | 入口 | 当前状态 |
 | --- | --- | --- |
-| 机器登记 | [repo.json](repo.json) | `ModControl` 活动模块＋`ModControl.Resources` 数据模块；版本 0.3.5 |
-| 运行源码 | [ModControl/src](ModControl/src) | BepInEx 入口＋手动 ArchiveModule 注册＋三个只读 Feature 页面（静态 `[FeatureConfig]` 设置属性） |
+| 机器登记 | [repo.json](repo.json) | `ModControl` 活动模块＋`ModControl.Resources` 数据模块；版本 0.3.7 |
+| 运行源码 | [ModControl/src](ModControl/src) | BepInEx 入口＋手动 ArchiveModule 注册＋四个一级 Feature 页面（静态 `[FeatureConfig]` 设置属性） |
 | 操作模型源码 | [ModControl/src/Core/Operations](ModControl/src/Core/Operations) | 即时保存、P／R、校验、能力/权限、修订检查与协调器；无草稿/临时应用/恢复路径 |
-| 离线测试 | [ModControl/tests](ModControl/tests) | 18 组 66 项纯逻辑/资源/存储/适配器测试；不加载游戏、不写目标配置 |
+| 离线测试 | [ModControl/tests](ModControl/tests) | 19 组 73 项纯逻辑/资源/存储/适配器测试；不加载游戏、不写目标配置 |
 | 模块分组定义 | [Definitions](ModControl/Resources/Definitions/Module_PreLuna.ModControl_Group_Definition.json) | 随 DLL 安装的 TheArchive 原生数据文件 |
 | 页面组织、状态模型、配置归属与操作协议 | [设计细节](docs/DESIGN.md) | 设计基线 v1；C1～C4 已落地，C5 目标扩展完成并经用户验收，C6 滑块显示子项已落地 |
 | 原型、施工阶段、验收矩阵与回退 | [施工计划](docs/IMPLEMENTATION_PLAN.md) | C1～C4 完成；C5 目标扩展已验收；阶段 A 0.2.1、阶段 B 0.2.2 已验收；0.3.4 新增 BFV 反馈页（26 项）、String 目标值与 `SColor` 拾色器，18组66项离线通过并获用户验收 |
 
-模块名 `ModControl`，程序集与插件 GUID `PreLuna.ModControl`，版本 `0.3.5`。构建输出为 `PreLuna.ModControl.dll` 与 `Definitions/Module_PreLuna.ModControl_Group_Definition.json`；游戏目标目录沿用 `BepInEx/plugins/本地定制/PreLuna.ModControl/`。已提交/推送远端 main；未发布 Release；`out` 仅为可重建临时输出。0.3.5 将 `ThirdPersonHUD` 目标版本标识更新为 0.15.2，新增两个 1b 布尔项；0.3.4 将 `PreLuna.EnemyHealthBar.dll` 外部引用固定到本机已交付父 0.4.0 的 SHA256 `E946D90747E37A712B6CD8134CA48DA0901FA6D6952E1C257E06296BEC99C30C`。
+模块名 `ModControl`，程序集与插件 GUID `PreLuna.ModControl`，版本 `0.3.7`。构建输出为 `PreLuna.ModControl.dll` 与 `Definitions/Module_PreLuna.ModControl_Group_Definition.json`；游戏目标目录沿用 `BepInEx/plugins/本地定制/PreLuna.ModControl/`。源码由main维护，正式安装包以Releases实际内容为准；`out` 仅为可重建临时输出。0.3.5 将 `ThirdPersonHUD` 目标版本标识更新为 0.15.2，新增两个 1b 布尔项；0.3.4 将 `PreLuna.EnemyHealthBar.dll` 外部引用固定到本机已交付父 0.4.0 的 SHA256 `E946D90747E37A712B6CD8134CA48DA0901FA6D6952E1C257E06296BEC99C30C`。
 
 <a id="usage"></a>
 ## 页面与操作
 
-沿用 `设置 → 模组设置 → PreLuna` 入口，使用 TheArchive 的原生分组、子菜单、标签和按钮。C1 一级页面为：
+沿用 `设置 → 模组设置 → PreLuna` 入口，使用 TheArchive 的原生分组、子菜单、标签和按钮。当前一级页面为：
 
 - **概览**：管理模块版本、TheArchive 版本／初始化状态、已加载 PreLuna 目标数量、Archive 模块注册结果。
+- **按键绑定**：18项按MOD分组，键名旁标记重复，详情页逐项列出占用功能；点击录入，Esc清除，即时保存。
 - **已接入 MOD**：显示 BepInEx 已加载的 PreLuna 插件 GUID 与版本；列表自动刷新，也可手动刷新。首个已适配目标从列表上方的“敌人血条配置”子菜单进入。
 - **状态与诊断**：框架、注册、最近错误与只读说明；刷新按钮重新读取框架和插件状态。
 
 三个 C1 页面的刷新按钮仍在设置行最上方；`已接入 MOD` 列表每 2 秒刷新标签，不触碰目标配置控件。
 
 C1 页面通过静态 `[FeatureConfig]` 设置属性注册，只使用 `FLabel`／`FButton`，不创建或改写目标 MOD 配置。
+
+<a id="keybindings"></a>
+## 按键绑定与保存修复
+
+入口：`设置 → 模组设置 → PreLuna → 按键绑定`。点击键名后按新键，Esc清除为None。每次修改立即生效并保存，无批量应用按钮；缺失或旧版目标未提供字段时拒绝写入。
+
+| 目标／配套版本 | 首批绑定（默认值） | 触发边界 |
+| --- | --- | --- |
+| ThirdPerson 0.6.32 | 切换F6、恢复镜头默认F7、诊断F8、换肩F9、风格F10、性能采集F11、调试覆盖层F12、观察RightAlt | 原有本体／FPS焦点和场景资格；观察为按住 |
+| ThirdPersonHUD 0.15.3 | 显示／详情Insert、队伍End、样式F5、恢复原版Pause | 本机HUD；恢复键不在菜单／聊天中响应 |
+| HeadCamera 0.3.19 | 观察／接管共享入口T、下一位RightArrow、上一位LeftArrow | 同一入口识别单击观察、双击请求接管；切队友只在观察时 |
+| MicroMaster 0.5.20 | 紧急退出F8、画面大小F7、视角复位Home | 等待／已接管及原有焦点限制，Esc保留退出能力 |
+
+重复检查比较这18项当前实际值，忽略None，允许重复保存；键名旁标记“重复”，详情页逐项列出占用功能。F7／F8等同键还需结合生效场景判断，首版不自动换键、不做全局输入仲裁。原版、第三方插件、Captain.Commands额外入口、写死操作键与组合键不在此范围。
+
+实现为[KeybindsPage](ModControl/src/Features/KeybindsPage.cs)＋[KeybindSession](ModControl/src/Core/Keybinds/KeybindSession.cs)。通过原有隔离适配器、JSON `key.*` 整数键码及目标保存后端读写；原CFG字段、输入运行器和T共享手势保持原归属，功能MOD不新增对管理模块的硬依赖。录入与快照刷新分开，避免覆盖原生录入提示；动态详情逐项单行，避免多行标签叠字。
+
+0.3.6实测出现“录入新键后回退”。正常F6会自动保存第三人称未受管字段，但旧控制状态未同步文件指纹，下一次换肩／观察改键因此返回配置冲突。ThirdPerson0.6.32只在BepInEx成功自动Save后的SettingChanged且SaveOnConfigSet=true时同步修订；受控写入关闭自动保存，仍执行期望修订／文件指纹校验、行级替换及失败回滚。禁止把任意外部文件变化当作合法新基线。
+
+保存结果在页面显示；日志使用 `[按键保存] CameraSwap=...`／`CameraObserve=...` 等字段记录请求与结果，区分录入、校验、冲突和存储失败。目标侧具体机制见[镜头仓说明](https://github.com/PreLuna/GTFO-Third-Person-Camera-and-HUD#keybindings)。
+
+验证基线：本仓19组73项离线测试；镜头／HUD39组配方及真实BepInEx.ConfigFile新增7项；机器人仓41组托管源码套件及既有依赖／Harmony检查。真实配置测试覆盖自动保存后改绑、外部修改拒绝、关闭自动保存时不放行、过期修订、None清除和全新ConfigFile实例读回。用户确认的实机范围是本轮换肩／观察新键保持及游戏重启后保留；其他目标逐项、联机和极限场景没有新增验收结论。文档收尾仅核对输入、链接与锁，沿用上述构建回归证据。
 
 ## C3 敌人血条自动保存
 
@@ -155,11 +180,11 @@ TheArchive 的 `FSSlider` 把 `(实际值 - Min) / (Max - Min)` 归一化后交�
 共用工具为旁边的 [GTFO-Mod-Build-and-Verification-Tools](../GTFO-Mod-Build-and-Verification-Tools/README.md)。开发底座沿用 PowerShell 7、支持 C# 12 的编译环境、.NET 6 与游戏本机 BepInEx／interop。
 
 ```powershell
-./Build.ps1 -GameRoot 'D:/Program/Game/Steam/Steam/steamapps/common/GTFO' -RuntimeRoot 'C:/Program Files/dotnet/shared/Microsoft.NETCore.App/6.0.16'
-./Test.ps1 -RuntimeRoot 'C:/Program Files/dotnet/shared/Microsoft.NETCore.App/6.0.16'
+./Build.ps1 -GameRoot 'D:/Program/Game/Steam/Steam/steamapps/common/GTFO' -RuntimeRoot 'C:/Program Files/dotnet/shared/Microsoft.NETCore.App/6.0.36'
+./Test.ps1 -RuntimeRoot 'C:/Program Files/dotnet/shared/Microsoft.NETCore.App/6.0.36'
 ```
 
-`Build.ps1` 调用共享工具，核验 `maintenance.lock.json`、TheArchive 固定 SHA256、`[BepInPlugin]`／`[BepInDependency]` 身份，并额外检查成品不含 `[ArchiveModule]`、不存在会被 TheArchive 实例化的抽象 Feature 基类，且每个页面都有静态 `[FeatureConfig]` 设置属性（缺少该特性时 TheArchive 不会生成“设置 → 进入”子菜单）。`Test.ps1` 编译并运行 9 组 42 项：`TargetCatalogTests` 4、`StatusModelTests` 3、`SliderValueFormatterTests` 5、`ResourcesJsonTests` 1、`ValidationTests` 4、`OperationCoordinatorTests` 16、`ConfigFileRevisionStoreTests` 4、`ThirdPersonHudAdapterTests` 3、`PrisonerMovementReadOnlyAdapterTests` 2。覆盖合法/非法值、越界、未知键、provider 校验拒绝、目标缺失/销毁、读取异常、能力不足、权限拒绝、写入冲突、重入、保存失败保留 P／R、异常和连续即时更新；JSON 适配器另用同程序集假目标验证快照/校验/保存映射。失败注入与 fake provider 只在测试中使用，不写目标配置。HUD 目标仓另有 33 组测试（新增 `HudConfigFileStoreTests` 4、`HudControlStateTests` 5），包含安全行级存储、修订冲突和保存失败回滚。文件存在不表示测试已执行；离线通过不表示游戏实测。
+`Build.ps1` 调用共享工具，核验 `maintenance.lock.json`、TheArchive 固定 SHA256、`[BepInPlugin]`／`[BepInDependency]` 身份，并额外检查成品不含 `[ArchiveModule]`、不存在会被 TheArchive 实例化的抽象 Feature 基类，且每个页面都有静态 `[FeatureConfig]` 设置属性（缺少该特性时 TheArchive 不会生成“设置 → 进入”子菜单）。`Test.ps1` 当前编译并运行19组73项，包含KeybindSessionTests新增7项；已有测试包括：`TargetCatalogTests` 4、`StatusModelTests` 3、`SliderValueFormatterTests` 5、`ResourcesJsonTests` 1、`ValidationTests` 4、`OperationCoordinatorTests` 16、`ConfigFileRevisionStoreTests` 4、`ThirdPersonHudAdapterTests` 3、`PrisonerMovementReadOnlyAdapterTests` 2。覆盖合法/非法值、越界、未知键、provider 校验拒绝、目标缺失/销毁、读取异常、能力不足、权限拒绝、写入冲突、重入、保存失败保留 P／R、异常和连续即时更新；JSON 适配器另用同程序集假目标验证快照/校验/保存映射。失败注入与 fake provider 只在测试中使用，不写目标配置。HUD 目标仓另有 33 组测试（新增 `HudConfigFileStoreTests` 4、`HudControlStateTests` 5），包含安全行级存储、修订冲突和保存失败回滚。文件存在不表示测试已执行；离线通过不表示游戏实测。
 
 本仓遵循“审查并暂存输入 → 显式更新锁 → 暂存锁 → 核验”的维护流程。安装本机钩子后，维护检查可从本仓运行：
 
@@ -169,9 +194,9 @@ TheArchive 的 `FSSlider` 把 `(实际值 - Min) / (Max - Min)` 归一化后交�
 
 只验证文档、路径、输入锁及 Git 索引，不表示构建或游戏实测通过。新克隆依工具仓 `Enable-Hooks.ps1` 流程安装本机钩子。源码改动按实际接入范围做关联回归；C1 的只读打开／关闭、焦点恢复、页面刷新与实机加载需要单独游戏验收。
 
-游戏引用、第三方框架 DLL、个人 CFG 和本地日志不进入源码 Git。`out` 仅为可重建输出；本轮增量交付只包含 `PreLuna.ModControl.dll` 与 `Definitions/Module_PreLuna.ModControl_Group_Definition.json`，按工作区根的[本地交付/当前/替换清单.md](../../本地交付/当前/替换清单.md)复制到游戏目标目录。提交、远端、推送、安装与正式发布按当次授权分别执行。
+游戏引用、第三方框架 DLL、个人 CFG 和本地日志不进入源码 Git。`out` 仅为可重建输出；本轮管理模块增量只需 `PreLuna.ModControl.dll`；现有 `Definitions/Module_PreLuna.ModControl_Group_Definition.json` 沿用，四个配套目标DLL另见实际交付清单，按工作区根的[本地交付/当前/替换清单.md](../../本地交付/当前/替换清单.md)复制到游戏目标目录。提交、远端、推送、安装与正式发布按当次授权分别执行。
 
-整合仓的精确源码组合目前未包含本仓；本仓没有提交和远端，不填造 Commit、URL 或发布哈希。后续联仓核验先按实际范围登记 LocalWorkspace，提交／推送后再登记真实提交；历史 PublishedBaseline 不随本阶段改写。
+跨仓精确源码组合由整合仓Repositories登记实际提交和锁；未提交组合使用LocalWorkspace。PublishedBaseline保留旧安装包对应的版本与哈希，不用旧ZIP哈希冒充新源码发布。
 
 <a id="sources"></a>
 ## 来源说明

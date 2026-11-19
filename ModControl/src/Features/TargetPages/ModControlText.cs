@@ -52,7 +52,9 @@ namespace PreLuna.ModControl.Features
         {
             if (values == null || values.Count == 0) return "无";
             var parts = new List<string>();
-            foreach (var pair in values) parts.Add(pair.Key + "：" + FormatValue(pair.Value));
+            foreach (var pair in values)
+                if (!pair.Key.StartsWith("key.", StringComparison.Ordinal))
+                    parts.Add(pair.Key + "：" + FormatValue(pair.Value));
             return string.Join("  ", parts.ToArray());
         }
 
